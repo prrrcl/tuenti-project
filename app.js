@@ -5,6 +5,9 @@ const logger = require('morgan');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
@@ -14,6 +17,26 @@ mongoose.connect('mongodb://localhost/tuentiBd', {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
+});
+
+// --
+
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  secret: 'some-string',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
+
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser;
+  next();
 });
 
 // view engine setup
