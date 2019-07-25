@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+<<<<<<< HEAD
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -69,6 +70,13 @@ router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
 router.post('/logout', isNotLoggedIn, (req, res, next) => {
   delete req.session.currentUser;
   return res.redirect('/');
+=======
+const { isLoggedIn, isNotLoggedIn, isFormFilled, isIdvalid } = require('../middlewares/authMiddlewares');
+
+/* GET home page. */
+router.get('/', isLoggedIn, (req, res, next) => {
+  res.render('auth/login');
+>>>>>>> ab710ff652367635ed7a091d0ee448297f235896
 });
 
 module.exports = router;
