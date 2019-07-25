@@ -24,7 +24,8 @@ Tuentiyo is a social media that the users can sign-up. When they create their ac
 
 **Friends Page** - As a User I want to get into a friend page and comment their photos.
 
-## Backlog
+## Backlog
+
 List of other features outside of the MVPs scope:
 
 - **HomePage**: A home page to show the photos and new feed of your friends.
