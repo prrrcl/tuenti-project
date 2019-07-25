@@ -2,9 +2,41 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
+  <body class="preload">
+    {{#if currentUser}}
+    <nav class="nav-bar">
+      <ul class="menu-layout">
+        <li><a href="/t/home">{{>logo}}</a></li>
+        <li><a href="/t/home">Inicio</a></li>
+        <li><a href="/t/perfil">Perfil</a></li>
+      </ul>
+      <ul class="my-account">
+        <li>
+          <p>Mi cuenta</p>
+          <ul class="sub-menu">
+            <li>
+                <form action="/logout" method="POST">
+                <button class="sub-menu-item" type="submit">Cerrar sesión</button>
+            </li>
+          </ul>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    {{/if}}
     {{{body}}}
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="../javascripts/main.js"></script>
   </body>
 </html>

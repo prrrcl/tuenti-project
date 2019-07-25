@@ -1,3 +1,26 @@
-<sections>
-
+<style>
+  body{
+    background: rgb(0,122,194);
+  }
+</style>
+<section class="home-login">
+  <article>
+<header>
+  <a href="/">
+    {{>logo}}
+  </a>
+</header>
+<form action="/login" method="POST">
+  <input type="text" name="username" autocomplete="off" id="username" placeholder="Username">
+  <input type="password" name="password" id="password" placeholder="password">
+  {{#if messages.length}}
+    <p class="error-message">{{messages.[0]}}</p>
+  {{/if}}
+  <fieldset>
+    <button type="submit">Entrar</button>
+  </fieldset>
+  
+  <p>¿Aún no tienes cuenta? <a href="/signup">Regístrate aquí</a></p>
+</form>
+  </article>
 </section>
