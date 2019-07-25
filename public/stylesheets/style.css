@@ -216,8 +216,59 @@ footer nav ul li a {
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
 }
 
+.menu-mobile-links-box .menu-mobile-links {
+  padding-top: 15px;
+}
+
+.menu-mobile-links-box .menu-mobile-links .sub-menu-item {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  padding: 15px;
+  font-size: 1.2em;
+  color: #313131;
+  background: white;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.menu-mobile-links-box .menu-mobile-links .sub-menu-item:hover {
+  background: #007ac2;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  color: white;
+}
+
+.menu-mobile-links-box .menu-mobile-links li a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  padding: 15px;
+  font-size: 1.2em;
+  color: #313131;
+  background: white;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-mobile-links-box .menu-mobile-links li a:hover {
+  background: #007ac2;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  color: white;
+}
+
 .visible {
-  height: 150px;
+  height: 200px;
   pointer-events: all;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
