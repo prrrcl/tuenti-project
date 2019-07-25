@@ -179,15 +179,93 @@ footer nav ul li a {
   margin-top: 0 !important;
 }
 
-.nav-bar {
+.mobile-navbar {
   width: 100%;
   background: #007ac2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-navbar {
+    display: none;
+  }
+}
+
+.mobile-navbar svg {
+  fill: white;
+  width: 150px;
+}
+
+.mobile-navbar .toggle-hamburger {
+  width: 25px;
+  height: 19px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 7px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile-navbar .toggle-hamburger div {
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background: white;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-navbar .toggle-hamburger div:first-child {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.mobile-navbar .opened div:first-child {
+  -webkit-transform: rotate(45deg) translate(7px, 4px);
+          transform: rotate(45deg) translate(7px, 4px);
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.mobile-navbar .opened div:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-navbar .opened div:last-child {
+  -webkit-transform: rotate(-45deg) translate(7px, -4px);
+          transform: rotate(-45deg) translate(7px, -4px);
+}
+
+.nav-bar {
+  width: 100%;
+  background: #007ac2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .menu-layout {
@@ -239,9 +317,6 @@ footer nav ul li a {
 .my-account {
   cursor: pointer;
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -251,6 +326,9 @@ footer nav ul li a {
   position: relative;
   padding-right: 25px;
   margin-right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .my-account:hover::after {

@@ -12,6 +12,13 @@ const main = () => {
       myAccount.classList.toggle('opened');
     });
   }
+  // menu-mobile
+  const toggler = document.querySelector('.toggle-hamburger');
+  if (toggler) {
+    toggler.addEventListener('click', (e) => {
+      toggler.classList.toggle('opened');
+    });
+  }
 };
 
 window.addEventListener('load', main);
