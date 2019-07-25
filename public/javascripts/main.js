@@ -14,9 +14,11 @@ const main = () => {
   }
   // menu-mobile
   const toggler = document.querySelector('.toggle-hamburger');
+  const links = document.querySelector('.menu-mobile-links-box');
   if (toggler) {
     toggler.addEventListener('click', (e) => {
       toggler.classList.toggle('opened');
+      links.classList.toggle('visible');
     });
   }
 };

@@ -10,9 +10,14 @@
     <nav class="nav-bar">
       {{>menuDesk}}
     </nav>
-    <nav class="mobile-navbar">
-      {{>menuMobile}}
-    </nav>
+    <header class="mobile-menu">
+      <div class="mobile-navbar">
+        {{>menuMobileHeader}}
+      </div>
+      <nav class="menu-mobile-links-box">
+        {{>menuMobileLinks}}
+      </nav>
+    </header>
     {{/if}}
     {{{body}}}
     <footer>

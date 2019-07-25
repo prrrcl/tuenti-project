@@ -179,6 +179,50 @@ footer nav ul li a {
   margin-top: 0 !important;
 }
 
+.mobile-menu {
+  position: relative;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.menu-mobile-links-box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: white;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-box-shadow: #31313182 1px 1px 5px;
+  box-shadow: #31313182 1px 1px 5px;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+
+.visible {
+  height: 150px;
+  pointer-events: all;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+
 .mobile-navbar {
   width: 100%;
   background: #007ac2;
@@ -198,7 +242,27 @@ footer nav ul li a {
 
 .mobile-navbar svg {
   fill: white;
+  width: 100%;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-navbar a {
   width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mobile-navbar a:hover svg {
+  fill: #42b6fb;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-navbar a:last-child {
+  width: 25px;
+  margin-right: 25px;
 }
 
 .mobile-navbar .toggle-hamburger {
