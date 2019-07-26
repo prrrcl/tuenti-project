@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const { isLoggedIn, isNotLoggedIn, isFormFilled } = require('../middlewares/authMiddlewares');
+const { isLoggedIn, isNotLoggedIn, isFormFilled, isSignUpFormFilled } = require('../middlewares/authMiddlewares');
 
 /* GET home page. */
 router.get('/', isLoggedIn, (req, res, next) => {
@@ -41,8 +41,8 @@ router.get('/signup', isLoggedIn, (req, res, next) => {
   res.render('auth/signup', data);
 });
 
-router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
-  const { username, password } = req.body; // recibimos los datos del form
+router.post('/signup', isLoggedIn, isSignUpFormFilled, async (req, res, next) => {
+  const { name, surnames, username, password } = req.body; // recibimos los datos del form
 
   // validamos que no haya un usuario con el mismo nombre de usuario:
   const user = await User.findOne({ username });
@@ -54,6 +54,8 @@ router.post('/signup', isLoggedIn, isFormFilled, async (req, res, next) => {
   const hashedPassword = bcrypt.hashSync(password, salt);
   try {
     const user = await User.create({
+      name,
+      surnames,
       username,
       password: hashedPassword
     });

@@ -34,5 +34,16 @@ const isFormFilled = (req, res, next) => {
   }
   next();
 };
+const isSignUpFormFilled = (req, res, next) => {
+  const { name, surnames, username, password } = req.body;
+  if (!username || !password || !name || !surnames) {
+    req.flash('ErrorFormFilled', 'Todos los campos son requeridos'); // mandamos al view el error
+    if (username) {
+      req.flash('dataForm', username);
+    }
+    return res.redirect(req.path);
+  }
+  next();
+};
 
-module.exports = { isIdvalid, isLoggedIn, isNotLoggedIn, isFormFilled };
+module.exports = { isIdvalid, isLoggedIn, isNotLoggedIn, isFormFilled, isSignUpFormFilled };
