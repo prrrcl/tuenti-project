@@ -510,4 +510,55 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   padding: 15px;
 }
+
+.form-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-search form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form-search button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  width: 30px;
+}
+
+.form-search button:hover svg {
+  fill: #42b6fb;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.form-search button svg {
+  fill: white;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.form-search input {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  width: 145px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.form-search input:focus {
+  width: 245px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
 /*# sourceMappingURL=style.css.map */

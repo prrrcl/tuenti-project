@@ -412,3 +412,39 @@ footer{
     padding:15px;
   }
 }
+.form-search{
+  display: flex;
+  align-items: center;
+  form{
+    display: flex;
+  }
+  button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+    width:30px;
+    &:hover{
+      svg{
+        fill:$button-color;
+        transition:$transition;
+      }
+    }
+    svg{
+      fill:$white;
+      transition:$transition;
+    }
+  }
+  input{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    width: 145px;
+    transition:$transition;
+    &:focus{
+      width: 245px;
+      transition: $transition;
+    }
+  }
+}
