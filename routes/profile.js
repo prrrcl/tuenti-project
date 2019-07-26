@@ -21,8 +21,13 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
     next(err);
   }
 });
+
 router.get('/edit', isNotLoggedIn, (req, res, next) => {
   res.render('user/edit');
+});
+
+router.get('/albums', isNotLoggedIn, (req, res, next) => {
+  res.render('user/albums');
 });
 
 module.exports = router;

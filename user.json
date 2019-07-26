@@ -1,0 +1,29 @@
+
+    [
+        {
+    "_id": "5d3ab7179166e43ef55efbc6",
+    "profileImg": "images/default.jpg",
+    "name": "Adrián",
+    "surnames": "Porcel Navarro",
+    "username": "adri",
+    "password": "$2b$10$KHZjHHJLoCXaKXKhmA6aqOVUVEuZ1oWtJ6mzzm.YOL/Gawq.H5KNe",
+    "createdAt": ISODate("2019-07-26T08:17:27.037Z"),
+    "updatedAt": ISODate("2019-07-26T08:17:27.037Z"),
+    "__v": 0
+  },
+  {
+    "_id": "5d3ab9dbfe91b73fb3c0811d")
+    "profileImg": "/images/default.jpg",
+    "name": "Juan",
+    "surnames": "Perez",
+    "username": "juan",
+    "password": "$2b$10$rJIWUrUoaNChqWffkShv9uP71RXCy/Yk9bziIZnPdVM11F2be2956",
+    "createdAt": ISODate("2019-07-26T08:29:15.265Z"),
+    "updatedAt": ISODate("2019-07-26T15:30:00.853Z"),
+    "__v": 0,
+    "albums": [
+      "5d3ac6c56e8ab642f8415ca2"
+    ]
+
+  }
+    ]
