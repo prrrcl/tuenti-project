@@ -1,1 +1,6 @@
-<h1>Prueba {{username}}</h1> 
+<h1>Prueba</h1> 
+<ul>
+    {{#each usersArray}}
+    <li><a href="/t/user/{{username}}">{{name}} {{surnames}}</a></li>
+    {{/each}}
+</ul>
