@@ -23,7 +23,7 @@ const userSchema = new Schema({
   },
   profileImg: {
     type: String,
-    default: 'images/default.jpg'
+    default: '/images/default.jpg'
   },
   albums: [{
     type: ObjectId,

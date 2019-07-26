@@ -411,8 +411,11 @@ footer{
 .form-search{
   display: flex;
   align-items: center;
+  width: 50%;
   form{
     display: flex;
+    width:100%;
+    justify-content: center;
   }
   button{
     border: none;
@@ -436,11 +439,67 @@ footer{
     padding: 5px 10px;
     border: none;
     outline: none;
-    width: 145px;
+    width: 70%;
     transition:$transition;
     &:focus{
-      width: 245px;
+      width: 100%;
       transition: $transition;
     }
+  }
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  @include media('medium'){
+    flex-direction: row;
+  }
+  aside{
+    width: 100%;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    height: 100%;
+    
+    @include media('medium'){
+      width: 25%;
+      margin: 100px 50px 0 50px;
+    }
+    ul{
+      list-style: none;
+      text-align: center;
+      li{
+        width:100%;
+        padding: 15px;
+        border-bottom:1px solid #eee;
+        font-weight: 600;
+      }
+    }
+  }
+  main{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      width:100%;
+      margin-bottom: 25px;
+    }
+  }
+}
+.change-pic-form{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  .img-profile{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+  input{
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
   }
 }

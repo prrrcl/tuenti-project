@@ -546,12 +546,17 @@ footer nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 50%;
 }
 
 .form-search form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .form-search button {
@@ -579,14 +584,99 @@ footer nav ul li a {
   padding: 5px 10px;
   border: none;
   outline: none;
-  width: 145px;
+  width: 70%;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .form-search input:focus {
-  width: 245px;
+  width: 100%;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.content aside {
+  width: 100%;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .content aside {
+    width: 25%;
+    margin: 100px 50px 0 50px;
+  }
+}
+
+.content aside ul {
+  list-style: none;
+  text-align: center;
+}
+
+.content aside ul li {
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.content main {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content main h2 {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.change-pic-form {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.change-pic-form .img-profile {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.change-pic-form input {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=style.css.map */
