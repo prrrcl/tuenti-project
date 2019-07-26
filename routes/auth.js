@@ -13,7 +13,7 @@ router.get('/', isLoggedIn, (req, res, next) => {
   res.render('auth/login', data);
 });
 
-router.post('/login', isLoggedIn, isFormFilled, async (req, res, next) => {
+router.post('/', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { username, password } = req.body;
 
   try {
