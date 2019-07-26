@@ -243,6 +243,10 @@ footer nav ul li a {
   color: white;
 }
 
+.menu-mobile-links-box .menu-mobile-links li:first-child {
+  padding: 0 10px;
+}
+
 .menu-mobile-links-box .menu-mobile-links li a {
   text-decoration: none;
   width: 100%;
@@ -264,8 +268,35 @@ footer nav ul li a {
   color: white;
 }
 
+.menu-mobile-links-box .menu-mobile-links form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-mobile-links-box .menu-mobile-links form input {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  width: 80%;
+  border: #ccc 1px solid;
+  margin: 0 0 10px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-mobile-links-box .menu-mobile-links form input:focus {
+  outline: none;
+  width: 100%;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  border: #42b6fb 1px solid;
+}
+
 .visible {
-  height: 200px;
+  height: 250px;
   pointer-events: all;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;

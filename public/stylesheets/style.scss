@@ -187,6 +187,9 @@ footer{
         }
     }
     li{
+      &:first-child{
+        padding: 0 10px;
+      }
       a{
         text-decoration: none;
         width: 100%;
@@ -205,10 +208,29 @@ footer{
         }
       }
     }
+    
+    form{
+      display: flex;
+      justify-content: center;
+      input{
+        font-size: 1.2em;
+        padding: 10px 20px;
+        width: 80%;
+        border: #ccc 1px solid;
+        margin:0 0 10px;
+        transition: $transition;
+        &:focus{
+          outline:none;
+          width: 100%;
+          transition: $transition;
+          border: $button-color 1px solid;
+        }
+      }
+    }
   }
 }
 .visible{
-  height: 200px;
+  height: 250px;
   pointer-events: all;
   transition:$transitionWithDelay;
 }
