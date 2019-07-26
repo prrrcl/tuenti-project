@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const { isLoggedIn, isNotLoggedIn, isFormFilled, isIdvalid } = require('../middlewares/authMiddlewares');
+const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
 
 /* GET home page. */
 router.get('/', isNotLoggedIn, async (req, res, next) => {
