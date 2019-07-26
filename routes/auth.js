@@ -15,7 +15,6 @@ router.get('/', isLoggedIn, (req, res, next) => {
 
 router.post('/', isLoggedIn, isFormFilled, async (req, res, next) => {
   const { username, password } = req.body;
-
   try {
     const user = await User.findOne({ username });
     // si no encuentra el usuario:

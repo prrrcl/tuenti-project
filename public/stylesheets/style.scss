@@ -1,32 +1,6 @@
-$primary-color : rgb(0,122,194);
-$button-color: rgba(66,182,251,1);
-$secundary-color: rgb(49,49,49);
-$white: white;
-$font-family: 'Open Sans', sans-serif;
-/*********************
-QUERIES MIXIN
-*********************/
-
-@mixin media($width, $type: min) {
-  @if map_has_key($tuentiyobpoints, $width) {
-      $width: map_get($tuentiyobpoints, $width);
-
-      @media only screen and (#{$type}-width: $width) {
-          @content;
-      }
-  }
-}
-$transitionWithDelay: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
-$transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-$tuentiyobpoints: (
-  small: 0,
-  medium: 768px,
-  large: 1024px,
-  xlarge: 1280px,
-  xxlarge: 1600px,
-);
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
+@import 'scss/mixins';
+@import 'scss/variables';
 
 *{
   margin: 0;
@@ -410,5 +384,41 @@ footer{
     -moz-transition: $transition;
     -o-transition: $transition;
     padding:15px;
+  }
+}
+.form-search{
+  display: flex;
+  align-items: center;
+  form{
+    display: flex;
+  }
+  button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+    width:30px;
+    &:hover{
+      svg{
+        fill:$button-color;
+        transition:$transition;
+      }
+    }
+    svg{
+      fill:$white;
+      transition:$transition;
+    }
+  }
+  input{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    width: 145px;
+    transition:$transition;
+    &:focus{
+      width: 245px;
+      transition: $transition;
+    }
   }
 }

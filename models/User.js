@@ -11,6 +11,18 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  surnames: {
+    type: String,
+    required: true
+  },
+  profileImg: {
+    type: String,
+    default: 'images/default.jpg'
   }
 }, {
   timestamps: true

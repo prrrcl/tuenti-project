@@ -11,6 +11,7 @@ const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
+const searchRouter = require('./routes/search');
 
 const app = express();
 
@@ -54,7 +55,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
-app.use('/t', indexRouter);
+app.use('/t/home', indexRouter);
+app.use('/t/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
