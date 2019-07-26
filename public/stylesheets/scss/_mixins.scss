@@ -1,0 +1,9 @@
+@mixin media($width, $type: min) {
+  @if map_has_key($tuentiyobpoints, $width) {
+      $width: map_get($tuentiyobpoints, $width);
+
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+}
