@@ -61,7 +61,7 @@ router.post('/signup', isLoggedIn, isSignUpFormFilled, async (req, res, next) =>
     });
     // añadimos este usuario nuevo a la session
     req.session.currentUser = user;
-    res.redirect('/t/home');
+    res.redirect('/');
   } catch (err) {
     next(err);
   }
