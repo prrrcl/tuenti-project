@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
   const { username } = req.query;
   try {
     const usersArray = await User.find({ username });
-    console.log(usersArray);
+    // console.log(usersArray);
     res.render('search', { usersArray });
   } catch (err) {
     next(err);
