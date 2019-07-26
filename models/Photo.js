@@ -18,7 +18,7 @@ const photoSchema = new Schema({
   },
   comments: [{
     type: ObjectId,
-    ref: 'Album'
+    ref: 'PhotoComment'
   }]
 
 }, {
