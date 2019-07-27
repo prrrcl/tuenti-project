@@ -792,4 +792,26 @@ footer nav ul li a {
 .edit-menu-items ul li a:hover {
   color: #007ac2;
 }
+
+.upload {
+  color: white;
+  display: block;
+  padding: 10px;
+  margin-right: 10px;
+  background: #0065a1;
+  text-decoration: none;
+  border-radius: 5px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.upload:hover {
+  background: #42b6fb;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.main-aside img {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
