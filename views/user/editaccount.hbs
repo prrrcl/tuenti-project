@@ -1,0 +1,12 @@
+<section class="content">
+ {{>menuEditProfile}}
+  <main>
+    <h2>Editar Cuenta</h2>
+    <form action="/t/profile/edit/account" method="POST" class="edit-info-form">
+    <label for="name">Nombre de usuario:</label>
+      <input type="text" name="username" id="name" placeholder="Nombre" value="{{currentUser.username}}">
+      <button type="submit">Editar información</button>
+    </form>
+  </main>
+</section>
+  

@@ -1,19 +1,15 @@
 <section class="content">
-  <aside>
-    <ul>
-      <li>Perfil</li>
-      <li>Cuenta</li>
-      <li>Seguridad</li>
-    </ul>
-  </aside>
+ {{>menuEditProfile}}
   <main>
     <h2>Editar perfil</h2>
     <form action="/t/profile/changepic" class="change-pic-form" method="POST" enctype="multipart/form-data">
-    <input type="file" name="profileImg" id="profileimg">
-      <img class="img-profile" src="{{currentUser.profileImg}}">
+      <div>
+        <input type="file" name="profileImg" id="profileimg">
+        <img class="img-profile" src="{{currentUser.profileImg}}">
+      </div>
     </form>
 
-    <form action="/t/profile/editprofile" method="POST" class="edit-info-form">
+    <form action="/t/profile/edit/profile" method="POST" class="edit-info-form">
     <label for="name">Nombre:</label>
       <input type="text" name="name" id="name" placeholder="Nombre" value="{{currentUser.name}}">
       <label for="surname">Apellidos:</label>

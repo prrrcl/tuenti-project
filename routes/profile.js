@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/User');
 const Album = require('../models/Album');
 const Photo = require('../models/Photo');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
 const parser = require('../config/cloud');
 
@@ -27,7 +29,43 @@ router.get('/edit', isNotLoggedIn, (req, res, next) => {
   res.render('user/edit');
 });
 
-router.post('/editprofile', isNotLoggedIn, async (req, res, next) => {
+router.get('/edit/account', isNotLoggedIn, (req, res, next) => {
+  res.render('user/editaccount');
+});
+
+router.get('/edit/security', isNotLoggedIn, (req, res, next) => {
+  res.render('user/editsecurity');
+});
+
+router.post('/edit/security', isNotLoggedIn, async (req, res, next) => {
+  const { oldpassword, password, repassword } = req.body;
+  const salt = bcrypt.genSaltSync(saltRounds);
+  const newPasswordHashed = bcrypt.hashSync(password, salt);
+  const repNewPasswordHashed = bcrypt.hashSync(repassword, salt);
+  const currentUser = req.session.currentUser.username;
+  const user = await User.findOne({ username: currentUser });
+
+  if (bcrypt.compareSync(oldpassword, user.password) || newPasswordHashed === repNewPasswordHashed) {
+    try {
+      await User.findByIdAndUpdate(req.session.currentUser._id, { newPasswordHashed });
+      res.redirect('/');
+    } catch (err) {
+      next(err);
+    }
+  } else {
+    res.redirect('/t/profile/edit/security');
+  }
+});
+
+router.post('/edit/account', isNotLoggedIn, async (req, res, next) => {
+  const { username } = req.body;
+  const idUser = req.session.currentUser._id;
+  await User.findByIdAndUpdate(idUser, { username });
+  req.session.currentUser.username = username;
+  res.redirect(`/t/user/${req.session.currentUser.username}`);
+});
+
+router.post('/edit/profile', isNotLoggedIn, async (req, res, next) => {
   const { name, surnames } = req.body;
   const idUser = req.session.currentUser._id;
   await User.findByIdAndUpdate(idUser, { name, surnames });

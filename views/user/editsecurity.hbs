@@ -1,0 +1,17 @@
+<section class="content">
+ {{>menuEditProfile}}
+  <main>
+    <h2>Editar Seguridad</h2>
+    <form action="/t/profile/edit/security" method="POST" class="edit-info-form">
+      <label for="oldpassword">Contraseña actual:</label>
+      <input type="password" name="oldpassword" id="oldpassword" placeholder="Contraseña actual" value="">
+      <hr>
+      <label for="password">Nueva contraseña:</label>
+      <input type="password" name="password" id="password" placeholder="Nueva contraseña">
+      <label for="repassword">Nueva contraseña:</label>
+      <input type="password" name="repassword" id="reassword" placeholder="Escribe de nuevo la nueva contraseña">
+      <button type="submit">Editar información</button>
+    </form>
+  </main>
+</section>
+  
