@@ -13,8 +13,12 @@
       <img class="img-profile" src="{{currentUser.profileImg}}">
     </form>
 
-    <form action="/t/profile/edit" method="POST">
-      <input type="text" name="name" placeholder="Nombre" value="{{currentUser.name}}">
+    <form action="/t/profile/editprofile" method="POST" class="edit-info-form">
+    <label for="name">Nombre:</label>
+      <input type="text" name="name" id="name" placeholder="Nombre" value="{{currentUser.name}}">
+      <label for="surname">Apellidos:</label>
+      <input type="text" name="surnames" id="surname" placeholder="Apellidos" value="{{currentUser.surnames}}">
+      <button type="submit">Editar información</button>
     </form>
   </main>
 </section>

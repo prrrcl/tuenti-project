@@ -46,6 +46,56 @@ footer nav ul li a {
   font-size: .8em;
 }
 
+.btn, .home-login article form button, .edit-info-form button {
+  padding: 10px 30px;
+  font-size: 1em;
+  color: white;
+  margin: 10px;
+  border-radius: 5px;
+  background: #42b6fb;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn:hover, .home-login article form button:hover, .edit-info-form button:hover {
+  background: #007ac2;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.input, .home-login article form input, .edit-info-form input {
+  padding: 9px 13px;
+  font-size: 1em;
+  margin: 12px;
+  border: #ccc solid 1px;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.input:hover, .home-login article form input:hover, .edit-info-form input:hover {
+  border: #007ac2 1px solid;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.input:focus, .home-login article form input:focus, .edit-info-form input:focus {
+  outline: none;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  border: #007ac2 1px solid;
+}
+
 .home-login {
   height: 90vh;
 }
@@ -89,30 +139,6 @@ footer nav ul li a {
   text-align: center;
 }
 
-.home-login article form input {
-  padding: 9px 13px;
-  font-size: 1em;
-  margin: 12px;
-  border: #ccc solid 1px;
-  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.home-login article form input:hover {
-  border: #007ac2 1px solid;
-  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.home-login article form input:focus {
-  outline: none;
-  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  border: #007ac2 1px solid;
-}
-
 .home-login article form fieldset {
   display: block;
   -webkit-margin-start: 0;
@@ -133,32 +159,6 @@ footer nav ul li a {
   border-width: 0;
   border-style: groove;
   border-color: none;
-}
-
-.home-login article form button {
-  padding: 10px 30px;
-  font-size: 1em;
-  color: white;
-  margin: 10px;
-  border-radius: 5px;
-  background: #42b6fb;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.home-login article form button:hover {
-  background: #007ac2;
-  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .home-login article form p {
@@ -304,6 +304,7 @@ footer nav ul li a {
 
 .mobile-navbar {
   width: 100%;
+  height: 53px;
   background: #007ac2;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -667,6 +668,7 @@ footer nav ul li a {
 
 .content main {
   margin-top: 50px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -688,6 +690,7 @@ footer nav ul li a {
   position: relative;
   width: 250px;
   height: 250px;
+  margin-bottom: 50px;
 }
 
 .change-pic-form .img-profile {
@@ -703,5 +706,28 @@ footer nav ul li a {
   position: absolute;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.edit-info-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-info-form label {
+  width: 100%;
+}
+
+.edit-info-form input {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

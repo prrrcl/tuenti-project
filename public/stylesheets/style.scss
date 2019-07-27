@@ -39,6 +39,49 @@ footer{
     }
   }
 }
+.btn{
+    padding: 10px 30px;
+    font-size: 1em;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    background: #42b6fb;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    &:hover{
+      background: $primary-color;
+      transition: $transition;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -o-transition: $transition;        
+    }
+}
+.input{
+  padding: 9px 13px;
+        font-size: 1em;
+        margin: 12px;
+        border: #ccc solid 1px;
+        transition: $transition;
+        -webkit-transition: $transition;
+        -moz-transition: $transition;
+        -o-transition: $transition;
+        &:hover{
+              border: $primary-color 1px solid;
+              transition: $transition;
+        }
+        &:focus{
+          outline: none;
+          transition: $transition;
+          border: $primary-color 1px solid;
+        }
+}
 .home-login{
   height: 90vh;
   article{
@@ -68,23 +111,7 @@ footer{
       flex-direction: column;
       text-align: center;
       input{
-        padding: 9px 13px;
-        font-size: 1em;
-        margin: 12px;
-        border: #ccc solid 1px;
-        transition: $transition;
-        -webkit-transition: $transition;
-        -moz-transition: $transition;
-        -o-transition: $transition;
-        &:hover{
-              border: $primary-color 1px solid;
-              transition: $transition;
-        }
-        &:focus{
-          outline: none;
-          transition: $transition;
-          border: $primary-color 1px solid;
-        }
+        @extend .input
       }
       fieldset{
         display: block;
@@ -100,27 +127,7 @@ footer{
         border-color: none;
       }
       button{
-        padding: 10px 30px;
-        font-size: 1em;
-        color: white;
-        margin: 10px;
-        border-radius: 5px;
-        background: #42b6fb;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: $transition;
-        -webkit-transition: $transition;
-        -moz-transition: $transition;
-        -o-transition: $transition;
-        &:hover{
-          background: $primary-color;
-          transition: $transition;
-          -webkit-transition: $transition;
-          -moz-transition: $transition;
-          -o-transition: $transition;        }
+        @extend .btn
       }
       p{
         font-size: .8em;
@@ -236,6 +243,7 @@ footer{
 }
 .mobile-navbar{
   width: 100%;
+  height: 53px;
   background: $primary-color;
   justify-content: space-between;
   display: flex;
@@ -496,6 +504,7 @@ footer{
   }
   main{
     margin-top: 50px;
+    width:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -509,6 +518,7 @@ footer{
   position: relative;
   width: 250px;
   height: 250px;
+  margin-bottom: 50px;
   .img-profile{
     width: 250px;
     height: 250px;
@@ -521,5 +531,22 @@ footer{
     position: absolute;
     cursor: pointer;
     border-radius: 50%;
+  }
+}
+.edit-info-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+  align-items: center;
+  label{
+    width: 100%;
+  }
+  input{
+    @extend .input;
+    width: 100%;
+  }
+  button{
+    @extend .btn
   }
 }

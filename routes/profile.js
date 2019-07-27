@@ -27,6 +27,15 @@ router.get('/edit', isNotLoggedIn, (req, res, next) => {
   res.render('user/edit');
 });
 
+router.post('/editprofile', isNotLoggedIn, async (req, res, next) => {
+  const { name, surnames } = req.body;
+  const idUser = req.session.currentUser._id;
+  await User.findByIdAndUpdate(idUser, { name, surnames });
+  req.session.currentUser.name = name;
+  req.session.currentUser.surnames = surnames;
+  res.redirect(`/t/user/${req.session.currentUser.username}`);
+});
+
 router.post('/changepic', isNotLoggedIn, parser.single('profileImg'), async (req, res, next) => {
   const imageUrl = req.file.secure_url;
   const idUser = req.session.currentUser._id;
