@@ -21,6 +21,14 @@ const main = () => {
       links.classList.toggle('visible');
     });
   }
+
+  // AutoSubmit profile pic
+  const inputImg = document.querySelector('#profileimg');
+  if (inputImg) {
+    inputImg.onchange = function () {
+      document.querySelector('.change-pic-form').submit();
+    };
+  }
 };
 
 window.addEventListener('load', main);

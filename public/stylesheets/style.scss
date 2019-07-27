@@ -326,11 +326,14 @@ footer{
     text-decoration: none;
   }
   li{
+    transition: $transition;
+    background: transparent;
     &:first-child{
       margin-right: 25px;
     }
     &:hover{
       background: $button-color;
+      transition: $transition;
     }
     &:first-child:hover{
       background: none;
@@ -388,9 +391,27 @@ footer{
     cursor: default;
     pointer-events: none;
     .sub-menu-item{
-      width: 100%;
-      cursor: pointer;
-      pointer-events: all;
+      button, a{
+        width: 100%;
+        display:block;
+        color: $secundary-color;
+        text-decoration: none;
+        font-size:.8em;
+        text-align: center;
+        padding: 15px;
+        pointer-events: all;
+        font-weight: 800;
+        background: $white;
+        cursor: pointer;
+        border: none;
+        &:hover{
+          background: $primary-color;
+          color: $white;
+        }
+      }
+      &:last-child{
+        border-top:1px solid #ccc;
+      }
     }
   }
   
@@ -405,7 +426,6 @@ footer{
     -webkit-transition: $transition;
     -moz-transition: $transition;
     -o-transition: $transition;
-    padding:15px;
   }
 }
 .form-search{

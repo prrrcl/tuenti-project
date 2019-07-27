@@ -445,12 +445,20 @@ footer nav ul li a {
   text-decoration: none;
 }
 
+.menu-layout li {
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  background: transparent;
+}
+
 .menu-layout li:first-child {
   margin-right: 25px;
 }
 
 .menu-layout li:hover {
   background: #42b6fb;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .menu-layout li:first-child:hover {
@@ -520,10 +528,28 @@ footer nav ul li a {
   pointer-events: none;
 }
 
-.my-account .sub-menu .sub-menu-item {
+.my-account .sub-menu .sub-menu-item button, .my-account .sub-menu .sub-menu-item a {
   width: 100%;
-  cursor: pointer;
+  display: block;
+  color: #313131;
+  text-decoration: none;
+  font-size: .8em;
+  text-align: center;
+  padding: 15px;
   pointer-events: all;
+  font-weight: 800;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+
+.my-account .sub-menu .sub-menu-item button:hover, .my-account .sub-menu .sub-menu-item a:hover {
+  background: #007ac2;
+  color: white;
+}
+
+.my-account .sub-menu .sub-menu-item:last-child {
+  border-top: 1px solid #ccc;
 }
 
 .opened .sub-menu {
@@ -536,7 +562,6 @@ footer nav ul li a {
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  padding: 15px;
 }
 
 .form-search {

@@ -4,6 +4,7 @@ const User = require('../models/User');
 const Album = require('../models/Album');
 const Photo = require('../models/Photo');
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
+const parser = require('../config/cloud');
 
 /* GET home page. */
 router.get('/', isNotLoggedIn, async (req, res, next) => {
@@ -24,6 +25,14 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
 
 router.get('/edit', isNotLoggedIn, (req, res, next) => {
   res.render('user/edit');
+});
+
+router.post('/changepic', isNotLoggedIn, parser.single('profileImg'), async (req, res, next) => {
+  const imageUrl = req.file.secure_url;
+  const idUser = req.session.currentUser._id;
+  await User.findByIdAndUpdate(idUser, { profileImg: imageUrl });
+  req.session.currentUser.profileImg = imageUrl;
+  res.redirect('/t/profile/edit');
 });
 
 router.get('/albums', isNotLoggedIn, (req, res, next) => {

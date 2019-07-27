@@ -8,12 +8,12 @@
   </aside>
   <main>
     <h2>Editar perfil</h2>
-    <form action="/profile/changePic" class="change-pic-form" method="POST" enctype="multipart/form-data">
-    <input type="file" name="profileImg">
+    <form action="/t/profile/changepic" class="change-pic-form" method="POST" enctype="multipart/form-data">
+    <input type="file" name="profileImg" id="profileimg">
       <img class="img-profile" src="{{currentUser.profileImg}}">
     </form>
 
-    <form action="/profile/edit" method="POST">
+    <form action="/t/profile/edit" method="POST">
       <input type="text" name="name" placeholder="Nombre" value="{{currentUser.name}}">
     </form>
   </main>
