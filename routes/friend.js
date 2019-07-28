@@ -13,7 +13,7 @@ router.get('/:username', async (req, res, next) => {
     const friend = await User.findOne({ username }).populate('status');
     const lastIndexOfStatus = friend.status.length;
     const lastStatus = friend.status[lastIndexOfStatus - 1];
-    const dateStatus = moment(lastStatus.createdAt).startOf('hour').fromNow();
+    const dateStatus = moment(lastStatus.createdAt).startOf('minutes').fromNow();
     const data = {
       friend,
       lastStatus,
