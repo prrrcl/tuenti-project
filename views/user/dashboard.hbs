@@ -1,12 +1,19 @@
-<h1>Estás dentro iyo</h1>
-<p>{{currentUser.name}}</p>
-<main class="content">
+<main class="content main-content">
 <aside class="main-aside"> 
-  <header>
-    <img src="{{currentUser.profileImg}}" alt="profilepic">
+  <header class="profile-index">
+    <div>
+      <img src="{{currentUser.profileImg}}" alt="profilepic">
+    </div>
+    <div>
+      <h4><a href="/t/user/{{currentUser.username}}">{{currentUser.name}} {{currentUser.surnames}}</a></h4>
+      <p class="stats"><span>120.392</span> visitas a tu perfil</p>
+    </div>
   </header>
 </aside>
 <section>
   <h2>Novedades</h2>
 </section>
+<aside class="main-aside">
+a
+</aside>
 </main>
