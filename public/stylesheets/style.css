@@ -47,7 +47,7 @@ footer nav ul li a {
   font-size: .8em;
 }
 
-.btn, .home-login article form button, .edit-info-form button {
+.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button {
   padding: 10px 30px;
   font-size: 1em;
   color: white;
@@ -65,7 +65,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.btn:hover, .home-login article form button:hover, .edit-info-form button:hover {
+.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover {
   background: #007ac2;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -627,9 +627,9 @@ footer nav ul li a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 @media only screen and (min-width: 768px) {
@@ -651,6 +651,7 @@ footer nav ul li a {
 @media only screen and (min-width: 768px) {
   .content aside {
     width: 25%;
+    min-width: 360px;
     margin: 100px 50px 0 50px;
   }
 }
@@ -821,7 +822,7 @@ aside.main-aside {
 
 @media only screen and (min-width: 768px) {
   aside.main-aside {
-    margin: 0 !important;
+    margin: 0;
   }
 }
 
@@ -870,8 +871,15 @@ aside.main-aside img {
 }
 
 .main-content section {
-  width: 50%;
-  padding: 25px;
+  width: 100%;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-content section {
+    width: 50%;
+    padding: 25px;
+  }
 }
 
 .main-content .write-status {
@@ -973,5 +981,61 @@ aside.main-aside img {
   font-weight: 600;
   color: #313131;
   margin-right: 7px;
+}
+
+aside.invite-your-friends {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  aside.invite-your-friends {
+    display: block;
+    background: transparent;
+    border: none;
+    border-left: 1px solid #ccc;
+    padding: 25px;
+    margin-top: 25px;
+    min-width: 150px;
+  }
+}
+
+aside.invite-your-friends h3 {
+  margin-bottom: 15px;
+}
+
+aside.invite-your-friends p {
+  font-size: .7em;
+  color: #8f8f8f;
+  text-align: justify;
+}
+
+aside.invite-your-friends form {
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+aside.invite-your-friends form input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+aside.invite-your-friends form input:focus {
+  outline: none;
+  border: 1px solid #007ac2;
+}
+
+aside.invite-your-friends form button {
+  width: 20%;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
