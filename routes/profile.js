@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const Album = require('../models/Album');
 const Photo = require('../models/Photo');
+const Status = require('../models/Status');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
@@ -54,6 +55,19 @@ router.post('/edit/security', isNotLoggedIn, async (req, res, next) => {
     }
   } else {
     res.redirect('/t/profile/edit/security');
+  }
+});
+
+router.post('/updateStatus', isNotLoggedIn, async (req, res, next) => {
+  try {
+    const userId = req.session.currentUser._id;
+    const status = req.body.status;
+    const newStatus = await Status.create({ status, userId });
+    const statusId = newStatus._id;
+    await User.findByIdAndUpdate(userId, { $push: { status: statusId } });
+    res.redirect('/');
+  } catch (err) {
+    next(err);
   }
 });
 

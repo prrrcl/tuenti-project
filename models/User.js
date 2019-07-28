@@ -29,6 +29,10 @@ const userSchema = new Schema({
     type: ObjectId,
     ref: 'Album'
   }],
+  status: [{
+    type: ObjectId,
+    ref: 'Status'
+  }],
   friends: [{
     type: ObjectId,
     ref: 'User'
