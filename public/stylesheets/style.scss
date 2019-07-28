@@ -154,6 +154,7 @@ footer{
 }
 .menu-mobile-links-box{
   position: absolute;
+  z-index: 999;
   display: flex;
     flex-direction: column;
     background: white;
@@ -478,7 +479,7 @@ footer{
 }
 .content{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   @include media('medium'){
     flex-direction: row;
   }
@@ -707,10 +708,18 @@ aside.main-aside{
     }
   }
 }
+.calendar-section{
+  display: none;
+  @include media('medium'){
+    display: block;
+  }
+}
 .profile-index{
   display: flex;
-  border-bottom: 1px solid #f3f3f3;
-  margin-bottom: 15px; 
+  @include media('medium'){
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 15px; 
+  }
   div:first-child{
     width: 100px;
     height: 100px;
@@ -799,5 +808,42 @@ aside.invite-your-friends{
       border-bottom-right-radius: 5px;
       margin: 0;
     }
+  }
+}
+.profile-user{
+  .profile-img{
+    padding: 25px;
+    max-height: 358px;
+    overflow: hidden;
+  }
+}
+section.status-friend{
+  width:100%;
+  padding:20px;
+  font-size: .8em;
+  position:relative;
+  background: #dfe2e7;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+  &:before{
+    content:'"';
+    position: absolute;
+    left: 8px;
+    color:$grisperonotanto;
+    top: 5px;
+  }
+  &:after{
+    content:'"';
+    position: absolute;
+    right: 8px;
+    color:$grisperonotanto;
+    bottom: 5px;
+  }
+  .status-date{
+    position: absolute;
+    font-size: 9px;
+    bottom: 5px;
+    right: 16px;
   }
 }

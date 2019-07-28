@@ -190,6 +190,7 @@ footer nav ul li a {
 
 .menu-mobile-links-box {
   position: absolute;
+  z-index: 999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -627,9 +628,9 @@ footer nav ul li a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) {
@@ -912,12 +913,27 @@ aside.main-aside img {
   margin-right: 15px;
 }
 
+.calendar-section {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .calendar-section {
+    display: block;
+  }
+}
+
 .profile-index {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 1px solid #f3f3f3;
-  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .profile-index {
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 15px;
+  }
 }
 
 .profile-index div:first-child {
@@ -1037,5 +1053,45 @@ aside.invite-your-friends form button {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0;
+}
+
+.profile-user .profile-img {
+  padding: 25px;
+  max-height: 358px;
+  overflow: hidden;
+}
+
+section.status-friend {
+  width: 100%;
+  padding: 20px;
+  font-size: .8em;
+  position: relative;
+  background: #dfe2e7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+section.status-friend:before {
+  content: '"';
+  position: absolute;
+  left: 8px;
+  color: #8f8f8f;
+  top: 5px;
+}
+
+section.status-friend:after {
+  content: '"';
+  position: absolute;
+  right: 8px;
+  color: #8f8f8f;
+  bottom: 5px;
+}
+
+section.status-friend .status-date {
+  position: absolute;
+  font-size: 9px;
+  bottom: 5px;
+  right: 16px;
 }
 /*# sourceMappingURL=style.css.map */

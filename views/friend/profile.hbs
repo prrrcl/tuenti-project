@@ -1,1 +1,21 @@
-<h1>Estas en el perfil del cabesa: {{name}} {{surnames}}</h1>
+<main class="content main-content">
+<aside class="main-aside profile-user"> 
+  <header class="profile-img">
+    <img src="{{friend.profileImg}}" alt="{{friend.username}} profile pic">
+  </header>
+</aside>
+<section>
+  <h2>{{friend.name}} {{friend.surnames}}</h2>
+  {{>estadoFriend}}
+  <h2>Novedades</h2>
+</section>
+<aside class="main-aside invite-your-friends">
+  <h3>¡Invita a tus amigos a Tuentiyo!</h3>
+  <p>Tuentiyo actualmente, como la original, es una beta cerrada*, para que tus amigos se puedan registrar, ¡debes invitarlos!</p>
+  <p><small>*Beta cerrada de por vida, como la original ;)</small></p>
+  <form action="#">
+    <input type="text" placeholder="Invita a tus amigos a Tuentiyo">
+    <button>;)</button>
+  </form>
+</aside>
+</main>

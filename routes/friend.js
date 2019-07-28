@@ -3,12 +3,24 @@ const router = express.Router();
 const User = require('../models/User');
 const Album = require('../models/Album');
 const Photo = require('../models/Photo');
+const Status = require('../models/Status');
+const moment = require('moment');
+moment.locale('es');
 
 router.get('/:username', async (req, res, next) => {
   try {
     const { username } = req.params;
-    const friend = await User.findOne({ username });
-    res.render('friend/profile', friend);
+    const friend = await User.findOne({ username }).populate('status');
+    const lastIndexOfStatus = friend.status.length;
+    const lastStatus = friend.status[lastIndexOfStatus - 1];
+    const dateStatus = moment(lastStatus.createdAt).startOf('hour').fromNow();
+    const data = {
+      friend,
+      lastStatus,
+      dateStatus
+    };
+    console.log(data);
+    res.render('friend/profile', data);
   } catch (error) {
     next(error);
   };
