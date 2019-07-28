@@ -82,8 +82,4 @@ router.post('/changepic', isNotLoggedIn, parser.single('profileImg'), async (req
   res.redirect('/t/profile/edit');
 });
 
-router.get('/albums', isNotLoggedIn, (req, res, next) => {
-  res.render('user/albums');
-});
-
 module.exports = router;
