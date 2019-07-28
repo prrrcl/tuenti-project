@@ -24,11 +24,21 @@ router.get('/:username/albums', async (req, res, next) => {
   };
 });
 
-router.get('/:username/album/:idAlbum', async (req, res, next) => {
+router.get('/:username/albums/:idAlbum', async (req, res, next) => {
   try {
-    const album = await Album.findOne({ _id: req.params.idAlbum }).populate('photos');
+    const album = await Album.findOne({ _id: req.params.id }).populate('photos');
     console.log(album);
     res.render('user/album', album);
+  } catch (error) {
+    next(error);
+  };
+});
+
+router.get('/:username/albums/:idAlbum/:idPhoto', async (req, res, next) => {
+  try {
+    const photos = await Photo.findOne({ _id: req.params.id });
+    console.log(photos);
+    res.render('user/foto', photos);
   } catch (error) {
     next(error);
   };
