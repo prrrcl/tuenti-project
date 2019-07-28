@@ -810,6 +810,21 @@ aside.invite-your-friends{
     }
   }
 }
+.albums-profile{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .albums-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    a{
+      display: block;
+      width: 50%;
+      padding: 5px;
+    }
+  }
+}
 .profile-user{
   .profile-img{
     padding: 25px;

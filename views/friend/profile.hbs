@@ -9,13 +9,14 @@
   {{>estadoFriend}}
   <h2>Novedades</h2>
 </section>
-<aside class="main-aside invite-your-friends">
-  <h3>¡Invita a tus amigos a Tuentiyo!</h3>
-  <p>Tuentiyo actualmente, como la original, es una beta cerrada*, para que tus amigos se puedan registrar, ¡debes invitarlos!</p>
-  <p><small>*Beta cerrada de por vida, como la original ;)</small></p>
-  <form action="#">
-    <input type="text" placeholder="Invita a tus amigos a Tuentiyo">
-    <button>;)</button>
-  </form>
+<aside class="main-aside albums-profile">
+  <h3>Álbumes</h3>
+  <div class="albums-container">
+  {{#each friend.albums}}
+    <a href="/t/user/{{../friend.username}}/albums/{{this._id}}">
+      <img src="{{photos.[0].photo}}" alt="{{this.photos.[0].name}}">
+    </a>
+  {{/each}}
+  </div>
 </aside>
 </main>

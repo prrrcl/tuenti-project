@@ -1055,6 +1055,35 @@ aside.invite-your-friends form button {
   margin: 0;
 }
 
+.albums-profile {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.albums-profile .albums-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.albums-profile .albums-container a {
+  display: block;
+  width: 50%;
+  padding: 5px;
+}
+
 .profile-user .profile-img {
   padding: 25px;
   max-height: 358px;

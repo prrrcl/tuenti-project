@@ -10,7 +10,12 @@ moment.locale('es');
 router.get('/:username', async (req, res, next) => {
   try {
     const { username } = req.params;
-    const friend = await User.findOne({ username }).populate('status');
+    const friend = await User.findOne({ username }).populate({
+      path: 'status albums',
+      populate: {
+        path: 'photos'
+      }
+    });
     const lastIndexOfStatus = friend.status.length;
     const lastStatus = friend.status[lastIndexOfStatus - 1];
     const dateStatus = moment(lastStatus.createdAt).startOf('minutes').fromNow();
@@ -19,7 +24,7 @@ router.get('/:username', async (req, res, next) => {
       lastStatus,
       dateStatus
     };
-    console.log(data);
+    console.log(friend);
     res.render('friend/profile', data);
   } catch (error) {
     next(error);
@@ -39,7 +44,6 @@ router.get('/:username/albums', async (req, res, next) => {
 router.get('/:username/albums/:idAlbum', async (req, res, next) => {
   try {
     const album = await Album.findOne({ _id: req.params.id }).populate('photos');
-    console.log(album);
     res.render('user/album', album);
   } catch (error) {
     next(error);

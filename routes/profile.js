@@ -19,7 +19,6 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
         path: 'photos'
       }
     });
-    console.log(userAlbums);
     res.render('user/profile', userAlbums);
   } catch (err) {
     next(err);
