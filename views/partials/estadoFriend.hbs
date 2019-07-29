@@ -1,4 +1,4 @@
 <section class="status-friend">
-  <p>{{lastStatus.status}}</p>
+  <p>{{#if lastStatus}} {{lastStatus.status}} {{else}} Escribe tu primer estado!{{/if}}</p>
   <p class="status-date">{{dateStatus}}</p>
 </section>

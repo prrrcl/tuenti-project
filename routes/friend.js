@@ -18,13 +18,20 @@ router.get('/:username', async (req, res, next) => {
       }
     });
     const lastIndexOfStatus = friend.status.length;
-    const lastStatus = friend.status[lastIndexOfStatus - 1];
-    const dateStatus = moment(lastStatus.createdAt).startOf('minutes').fromNow();
-    const data = {
-      friend,
-      lastStatus,
-      dateStatus
-    };
+    let data = {};
+    if (lastIndexOfStatus !== 0) {
+      const lastStatus = friend.status[lastIndexOfStatus - 1];
+      const dateStatus = moment(lastStatus.createdAt).startOf('minutes').fromNow();
+      data = {
+        friend,
+        lastStatus,
+        dateStatus
+      };
+    } else {
+      data = {
+        friend
+      };
+    }
     res.locals.title = `${friend.name}`;
     res.render('friend/profile', data);
   } catch (error) {
