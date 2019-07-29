@@ -24,11 +24,16 @@ router.get('/:username', async (req, res, next) => {
       lastStatus,
       dateStatus
     };
-    console.log(friend);
     res.render('friend/profile', data);
   } catch (error) {
     next(error);
   };
+});
+
+router.get('/:username/upload', async (req, res, next) => {
+  const username = req.body.username;
+  const user = await User.findOne({ username });
+  res.render('user/upload', user);
 });
 
 router.get('/:username/albums', async (req, res, next) => {

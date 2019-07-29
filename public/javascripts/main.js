@@ -8,8 +8,17 @@ const main = () => {
   // my-account
   const myAccount = document.querySelector('.my-account');
   if (myAccount) {
-    myAccount.addEventListener('click', (e) => {
+    myAccount.addEventListener('click', (event) => {
       myAccount.classList.toggle('opened');
+      event.stopPropagation();
+      if (myAccount.classList.contains('opened')) {
+        document.addEventListener('click', () => {
+          myAccount.classList.remove('opened');
+        });
+      }
+      if (!myAccount.classList.contains('opened')) {
+        document.removeEventListener('click');
+      }
     });
   }
   // menu-mobile
