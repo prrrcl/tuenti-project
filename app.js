@@ -10,6 +10,7 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const User = require('./models/User');
 const Album = require('./models/Album');
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -19,7 +20,7 @@ const profileRouter = require('./routes/profile');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/tuentiBd', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -32,7 +33,7 @@ app.use(session({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   }),
-  secret: 'some-string',
+  secret: process.env.secret,
   resave: true,
   saveUninitialized: true,
   cookie: {
