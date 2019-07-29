@@ -43,19 +43,31 @@ router.get('/:username/albums', async (req, res, next) => {
 
 router.get('/:username/albums/:idAlbum', async (req, res, next) => {
   try {
+    const user = await User.findOne({ username: req.params.username });
     const album = await Album.findOne({ _id: req.params.idAlbum }).populate('photos');
-
-    res.render('user/album', album);
+    const data = {
+      user,
+      album
+    };
+    console.log(data);
+    res.render('user/album', data);
   } catch (error) {
     next(error);
   };
 });
 
-router.get('/:username/albums/:idAlbum/:idPhoto', async (req, res, next) => {
+router.get('/:username/albums/:idAlbum/photo/:idPhoto', async (req, res, next) => {
   try {
-    const photos = await Photo.findOne({ _id: req.params.id });
-    console.log(photos);
-    res.render('user/foto', photos);
+    const user = await User.findOne({ username: req.params.username });
+    const album = await Album.findOne({ _id: req.params.idAlbum });
+    const photo = await Photo.findOne({ _id: req.params.idPhoto });
+    const data = {
+      user,
+      album,
+      photo
+    };
+    console.log(data);
+    res.render('user/foto', data);
   } catch (error) {
     next(error);
   };

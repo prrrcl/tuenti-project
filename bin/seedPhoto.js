@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/tuentiBd', {
 });
 
 const data = [{
-  idAlbum: '5d3ab9dbfe91b73fb3c0811d',
+  idAlbum: '5d3b24f261b32e1ee855122a',
   name: 'Sonar',
   photo: 'images/uploads/1.jpg',
   comments: []

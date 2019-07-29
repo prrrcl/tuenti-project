@@ -1,4 +1,4 @@
 <h1>This is an album</h1>
-{{#each photos}}
-  <a href="foto/{{_id}}">{{this.photo}}aa</a>
+{{#each album.photos}}
+  <a href="/t/user/{{../user.username}}/albums/{{../album._id}}/photo/{{_id}}">{{photo}}</a>
 {{/each}}
