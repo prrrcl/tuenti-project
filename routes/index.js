@@ -10,7 +10,7 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
     const user = await User.findById(req.session.currentUser._id).populate('status');
     const lastIndexOfStatus = user.status.length;
     const lastStatus = user.status[lastIndexOfStatus - 1];
-    res.locals.title = `Inicio - Tuentiyo`;
+    res.locals.title = `Inicio`;
     res.render('user/dashboard', lastStatus);
   } catch (err) {
     next(err);
