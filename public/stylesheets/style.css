@@ -469,7 +469,6 @@ footer nav ul li a {
 }
 
 .my-account {
-  cursor: pointer;
   list-style: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -477,28 +476,35 @@ footer nav ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-right: 25px;
-  margin-right: 50px;
+  margin-right: 25px;
+}
+
+.my-account li.drop-account {
+  cursor: pointer;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.my-account:hover::after {
-  top: 18px;
+.my-account li.drop-account::after {
+  content: '▾';
+  position: absolute;
+  right: -15px;
+  top: 0;
+  color: white;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.my-account::after {
-  content: '▾';
-  position: absolute;
-  right: 5px;
-  top: 16px;
-  color: white;
+.my-account li.drop-account:hover::after {
+  top: 3px;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -moz-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -515,6 +521,7 @@ footer nav ul li a {
   height: 0;
   width: 150px;
   left: 50%;
+  top: 19px;
   -webkit-transform: translate(-50%, 16px);
           transform: translate(-50%, 16px);
   position: absolute;

@@ -24,11 +24,20 @@ router.get('/:username', async (req, res, next) => {
       lastStatus,
       dateStatus
     };
+<<<<<<< HEAD
     res.locals.title = `${friend.name} - Tuentiyo`;
+=======
+>>>>>>> 7479e3088e0099288a3731c7bc6ddb39bee19c91
     res.render('friend/profile', data);
   } catch (error) {
     next(error);
   };
+});
+
+router.get('/:username/upload', async (req, res, next) => {
+  const username = req.body.username;
+  const user = await User.findOne({ username });
+  res.render('user/upload', user);
 });
 
 router.get('/:username/albums', async (req, res, next) => {
