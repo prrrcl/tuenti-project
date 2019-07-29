@@ -815,6 +815,7 @@ footer nav ul li a {
   background: #0065a1;
   text-decoration: none;
   border-radius: 5px;
+  cursor: pointer;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }

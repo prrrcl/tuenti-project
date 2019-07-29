@@ -627,6 +627,7 @@ footer{
   background: $primary-color-hover;
   text-decoration: none;
   border-radius: 5px;
+  cursor: pointer;
   transition: $transition;
   &:hover{
     background: $button-color;

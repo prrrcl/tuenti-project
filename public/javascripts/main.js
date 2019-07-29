@@ -6,7 +6,7 @@ const main = () => {
   body.classList.remove(...body.classList);
 
   // my-account
-  const myAccount = document.querySelector('.my-account');
+  const myAccount = document.querySelector('.drop-account');
   if (myAccount) {
     myAccount.addEventListener('click', (event) => {
       myAccount.classList.toggle('opened');
@@ -37,6 +37,17 @@ const main = () => {
     inputImg.onchange = function () {
       document.querySelector('.change-pic-form').submit();
     };
+  }
+
+  // Modal upload
+
+  const buttonUpload = document.querySelector('.upload');
+  const container = document.querySelector('.modals');
+
+  if (buttonUpload) {
+    buttonUpload.addEventListener('click', () => {
+      container.classList.toggle('modal-opened');
+    });
   }
 };
 

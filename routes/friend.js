@@ -24,10 +24,7 @@ router.get('/:username', async (req, res, next) => {
       lastStatus,
       dateStatus
     };
-<<<<<<< HEAD
     res.locals.title = `${friend.name} - Tuentiyo`;
-=======
->>>>>>> 7479e3088e0099288a3731c7bc6ddb39bee19c91
     res.render('friend/profile', data);
   } catch (error) {
     next(error);

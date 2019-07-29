@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
+const User = require('./models/User');
+const Album = require('./models/Album');
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -40,8 +42,10 @@ app.use(session({
 
 app.use(flash());
 
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
+  const user = await User.findById(req.session.currentUser._id).populate('albums');
+  app.locals.user = user;
   next();
 });
 

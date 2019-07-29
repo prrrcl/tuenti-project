@@ -7,6 +7,15 @@
   </head>
   <body class="preload">
     {{#if currentUser}}
+    <section class="modals">
+      <div class="close-modal">
+        <div></div>
+        <div></div>
+      </div>
+      {{user.albums}}
+      <form action="/upload" method="POST">
+      </form>
+    </section>
     <nav class="nav-bar">
       {{>menuDesk}}
     </nav>
