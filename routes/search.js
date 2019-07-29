@@ -9,6 +9,7 @@ router.get('/', async (req, res, next) => {
   try {
     const usersArray = await User.find({ username });
     // console.log(usersArray);
+    res.locals.title = `Búsqueda de "${username}"`;
     res.render('search', { usersArray });
   } catch (err) {
     next(err);

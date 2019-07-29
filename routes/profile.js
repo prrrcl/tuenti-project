@@ -31,10 +31,12 @@ router.get('/edit', isNotLoggedIn, (req, res, next) => {
 });
 
 router.get('/edit/account', isNotLoggedIn, (req, res, next) => {
+  res.locals.title = `Cuenta`;
   res.render('user/editaccount');
 });
 
 router.get('/edit/security', isNotLoggedIn, (req, res, next) => {
+  res.locals.title = `Seguridad`;
   res.render('user/editsecurity');
 });
 
@@ -49,7 +51,6 @@ router.post('/edit/security', isNotLoggedIn, async (req, res, next) => {
   if (password === repassword) {
     if (bcrypt.compareSync(oldpassword, user.password)) {
       try {
-        console.log('Im in!');
         const newPasswordHashed = bcrypt.hashSync(password, salt);
         await User.findByIdAndUpdate(req.session.currentUser._id, { password: newPasswordHashed });
         res.redirect('/');

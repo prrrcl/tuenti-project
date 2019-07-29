@@ -10,6 +10,7 @@ router.get('/', isLoggedIn, (req, res, next) => {
   const data = {
     messages: req.flash('ErrorFormFilled')
   };
+  res.locals.title = `Conectarse - Tuentiyo`;
   res.render('auth/login', data);
 });
 
@@ -38,6 +39,7 @@ router.get('/signup', isLoggedIn, (req, res, next) => {
   const data = {
     messages: req.flash('ErrorFormFilled')
   };
+  res.locals.title = `Registrarse - Tuentiyo`;
   res.render('auth/signup', data);
 });
 

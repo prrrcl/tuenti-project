@@ -24,7 +24,7 @@ router.get('/:username', async (req, res, next) => {
       lastStatus,
       dateStatus
     };
-    console.log(friend);
+    res.locals.title = `${friend.name} - Tuentiyo`;
     res.render('friend/profile', data);
   } catch (error) {
     next(error);
@@ -35,6 +35,7 @@ router.get('/:username/albums', async (req, res, next) => {
   try {
     const username = req.params.username;
     const userAlbums = await User.findOne({ username });
+    res.locals.title = `Albums de ${userAlbums.name} - Tuentiyo`;
     res.render('user/albums', userAlbums);
   } catch (error) {
     next(error);
@@ -49,7 +50,7 @@ router.get('/:username/albums/:idAlbum', async (req, res, next) => {
       user,
       album
     };
-    console.log(data);
+    res.locals.title = `${album.name} - Tuentiyo`;
     res.render('user/album', data);
   } catch (error) {
     next(error);
@@ -66,7 +67,7 @@ router.get('/:username/albums/:idAlbum/photo/:idPhoto', async (req, res, next) =
       album,
       photo
     };
-    console.log(data);
+    res.locals.title = `${photo.name} - Tuentiyo`;
     res.render('user/foto', data);
   } catch (error) {
     next(error);
