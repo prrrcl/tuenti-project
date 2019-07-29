@@ -311,6 +311,7 @@ footer{
   background: $primary-color;
   justify-content: space-between;
   display: none;
+  transition: $transition;
   @include media('medium'){
     display: flex;
   }
@@ -484,6 +485,7 @@ footer{
 .content{
   display: flex;
   flex-direction: column;
+  transition: $transition;
   @include media('medium'){
     flex-direction: row;
   }
@@ -866,5 +868,82 @@ section.status-friend{
     font-size: 9px;
     bottom: 5px;
     right: 16px;
+  }
+}
+.modals{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 999;
+  background: $white;
+  padding: 25px;
+  transition: $transition;
+}
+.modal-opened{
+  opacity: 1;
+  pointer-events: all;
+  transition: $transitionWithDelay
+}
+.close-modal{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  float: right;
+  div{
+    height: 2px;
+    width: 100%;
+    background: $grisperonotanto;
+    &:first-child{
+      transform: rotate(45deg) translate(6px,6px)
+    }
+    &:last-child{
+      transform: rotate(-45deg) translate(-5px,5px)
+    }
+  }
+}
+.blurred{
+  filter: blur(.25rem);
+  opacity: .8;
+  transition: $transition
+}
+.new-album{
+  border-top: 1px solid #ccc;
+  margin-top: 25px;
+  padding-top: 25px;
+  
+    margin: 15px 0;
+    display:flex;
+    input{
+      width:80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      &:focus{
+        outline: none;
+        border: 1px solid $primary-color;
+      }
+    }
+    button{
+      width: 20%;
+      padding:10px;
+      @extend .btn;
+      border-radius: 0;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-bottom-right-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-bottomright: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin: 0;
+    }
+  .new-album-input{
+    @extend .input;
+    margin: 0;
+    width: 100%;
   }
 }

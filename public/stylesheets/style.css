@@ -47,7 +47,7 @@ footer nav ul li a {
   font-size: .8em;
 }
 
-.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button {
+.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button, .new-album button {
   padding: 10px 30px;
   font-size: 1em;
   color: white;
@@ -65,7 +65,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover {
+.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover, .new-album button:hover {
   background: #007ac2;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -73,7 +73,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input, .home-login article form input, .edit-info-form input {
+.input, .home-login article form input, .edit-info-form input, .new-album .new-album-input {
   padding: 9px 13px;
   font-size: 1em;
   margin: 12px;
@@ -84,13 +84,13 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input:hover, .home-login article form input:hover, .edit-info-form input:hover {
+.input:hover, .home-login article form input:hover, .edit-info-form input:hover, .new-album .new-album-input:hover {
   border: #007ac2 1px solid;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input:focus, .home-login article form input:focus, .edit-info-form input:focus {
+.input:focus, .home-login article form input:focus, .edit-info-form input:focus, .new-album .new-album-input:focus {
   outline: none;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -404,6 +404,8 @@ footer nav ul li a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   display: none;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @media only screen and (min-width: 768px) {
@@ -638,6 +640,8 @@ footer nav ul li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @media only screen and (min-width: 768px) {
@@ -1131,5 +1135,100 @@ section.status-friend .status-date {
   font-size: 9px;
   bottom: 5px;
   right: 16px;
+}
+
+.modals {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 999;
+  background: white;
+  padding: 25px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.modal-opened {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+
+.close-modal {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  float: right;
+}
+
+.close-modal div {
+  height: 2px;
+  width: 100%;
+  background: #8f8f8f;
+}
+
+.close-modal div:first-child {
+  -webkit-transform: rotate(45deg) translate(6px, 6px);
+          transform: rotate(45deg) translate(6px, 6px);
+}
+
+.close-modal div:last-child {
+  -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+          transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.blurred {
+  -webkit-filter: blur(0.25rem);
+          filter: blur(0.25rem);
+  opacity: .8;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.new-album {
+  border-top: 1px solid #ccc;
+  margin-top: 25px;
+  padding-top: 25px;
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new-album input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.new-album input:focus {
+  outline: none;
+  border: 1px solid #007ac2;
+}
+
+.new-album button {
+  width: 20%;
+  padding: 10px;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+}
+
+.new-album .new-album-input {
+  margin: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

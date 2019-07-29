@@ -12,8 +12,14 @@
         <div></div>
         <div></div>
       </div>
-      {{user.albums}}
-      <form action="/upload" method="POST">
+      <div class="albums-modal">
+        {{#each user.albums}}
+          {{name}}
+        {{/each}}
+      </div>
+      <form action="/upload" class="new-album" method="POST">
+      <input type="text" class="new-album-input" placeholder="Nuevo Album">
+      <button>Crear Album</button>
       </form>
     </section>
     <nav class="nav-bar">

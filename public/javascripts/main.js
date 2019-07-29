@@ -43,10 +43,22 @@ const main = () => {
 
   const buttonUpload = document.querySelector('.upload');
   const container = document.querySelector('.modals');
+  const main = document.querySelector('.content');
+  const navBar = document.querySelector('.nav-bar');
+  const close = document.querySelector('.close-modal');
 
   if (buttonUpload) {
     buttonUpload.addEventListener('click', () => {
-      container.classList.toggle('modal-opened');
+      container.classList.add('modal-opened');
+      main.classList.add('blurred');
+      navBar.classList.add('blurred');
+    });
+  }
+  if (close) {
+    close.addEventListener('click', () => {
+      container.classList.remove('modal-opened');
+      main.classList.remove('blurred');
+      navBar.classList.remove('blurred');
     });
   }
 };
