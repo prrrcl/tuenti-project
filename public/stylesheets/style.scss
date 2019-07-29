@@ -559,6 +559,7 @@ footer{
     &:after{
       content: '';
       width: 100%;
+      left:0;
       height: 150px;
       background: rgba($color: #000000, $alpha: .4);
       position: absolute;

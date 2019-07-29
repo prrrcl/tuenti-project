@@ -739,6 +739,7 @@ footer nav ul li a {
 .change-pic-form div:after {
   content: '';
   width: 100%;
+  left: 0;
   height: 150px;
   background: rgba(0, 0, 0, 0.4);
   position: absolute;

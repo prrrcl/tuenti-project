@@ -43,7 +43,8 @@ router.get('/:username/albums', async (req, res, next) => {
 
 router.get('/:username/albums/:idAlbum', async (req, res, next) => {
   try {
-    const album = await Album.findOne({ _id: req.params.id }).populate('photos');
+    const album = await Album.findOne({ _id: req.params.idAlbum }).populate('photos');
+
     res.render('user/album', album);
   } catch (error) {
     next(error);

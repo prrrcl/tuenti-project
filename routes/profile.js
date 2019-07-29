@@ -26,6 +26,7 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
 });
 
 router.get('/edit', isNotLoggedIn, (req, res, next) => {
+  res.locals.title = 'Perfil';
   res.render('user/edit');
 });
 
@@ -40,17 +41,21 @@ router.get('/edit/security', isNotLoggedIn, (req, res, next) => {
 router.post('/edit/security', isNotLoggedIn, async (req, res, next) => {
   const { oldpassword, password, repassword } = req.body;
   const salt = bcrypt.genSaltSync(saltRounds);
-  const newPasswordHashed = bcrypt.hashSync(password, salt);
-  const repNewPasswordHashed = bcrypt.hashSync(repassword, salt);
   const currentUser = req.session.currentUser.username;
   const user = await User.findOne({ username: currentUser });
 
-  if (bcrypt.compareSync(oldpassword, user.password) || newPasswordHashed === repNewPasswordHashed) {
-    try {
-      await User.findByIdAndUpdate(req.session.currentUser._id, { newPasswordHashed });
-      res.redirect('/');
-    } catch (err) {
-      next(err);
+  console.log(typeof oldpassword);
+  console.log(typeof user.password);
+  if (password === repassword) {
+    if (bcrypt.compareSync(oldpassword, user.password)) {
+      try {
+        console.log('Im in!');
+        const newPasswordHashed = bcrypt.hashSync(password, salt);
+        await User.findByIdAndUpdate(req.session.currentUser._id, { password: newPasswordHashed });
+        res.redirect('/');
+      } catch (err) {
+        next(err);
+      }
     }
   } else {
     res.redirect('/t/profile/edit/security');
