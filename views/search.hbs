@@ -1,6 +1,8 @@
-<h1>Prueba</h1> 
-<ul>
-    {{#each usersArray}}
-    <li><a href="/t/user/{{username}}">{{name}} {{surnames}}</a></li>
-    {{/each}}
-</ul>
+<main>
+    <h1>Esto es lo que hemos encotrado:</h1> 
+    <ul>
+        {{#each usersArray}}
+        <li><a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a></li>
+        {{/each}}
+    </ul> 
+</main>
