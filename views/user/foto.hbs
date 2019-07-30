@@ -1,3 +1,18 @@
 <h1>THIS IS A PHOTO</h1>
+<img src="{{photo.photo}}" alt="{{photo.name}}">
 
-{{photo.name}}
+<form class="comment-form">
+  <input type="text" name="comment">
+  <input type="text" name="idPhoto" hidden value="{{photo._id}}">
+  <button>Comentar</button>
+</form>
+
+<section class="comments">
+
+ {{#each photo.comments}}
+ <article class="user-comment">
+   <div class="comment">{{comment}}</div>
+   <a href="/t/user/{{../user.username}}"><img src="{{../user.profileImg}}" alt=""></a>
+ </article>
+ {{/each}}
+</section>

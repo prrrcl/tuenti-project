@@ -85,6 +85,32 @@ const main = () => {
       </a>`;
     listAlbums.appendChild(article);
   });
+
+  // post comment
+  const commentsContainer = document.querySelector('.comments');
+  const formComment = document.querySelector('.comment-form');
+  formComment.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const comment = {
+      idPhoto: event.srcElement.idPhoto.value,
+      comment: event.srcElement.comment.value
+    };
+    const responseComment = await axios.post('/api/postComment', comment);
+    formComment.reset();
+    const newComment = responseComment.data;
+    const article = document.createElement('article');
+    article.classList.add('user-comment');
+    const a = document.createElement('a');
+    a.setAttribute('href', `/t/user/${newComment.user[0].username}`);
+    a.innerHTML = `<img src="${newComment.user[0].profileImg}">`;
+    article.innerHTML = `
+      <div class="comment">
+        ${newComment.createdComment.comment}
+      </div>
+    `;
+    article.appendChild(a);
+    commentsContainer.appendChild(article);
+  });
 };
 
 window.addEventListener('load', main);
