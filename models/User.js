@@ -36,7 +36,16 @@ const userSchema = new Schema({
   friends: [{
     type: ObjectId,
     ref: 'User'
-  }]
+  }],
+  description: {
+    type: String
+  },
+  job: {
+    type: String
+  },
+  studies: {
+    type: String
+  }
 }, {
   timestamps: true
 });
