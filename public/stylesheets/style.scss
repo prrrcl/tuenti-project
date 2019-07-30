@@ -883,6 +883,17 @@ section.status-friend{
   background: $white;
   padding: 25px;
   transition: $transition;
+  h3{
+    text-align: center;
+  }
+}
+.albums-modal{
+  padding-top: 30px;
+  p{
+    font-size: .8em;
+    text-align: center;
+    color: $grisperonotanto
+  }
 }
 .modal-opened{
   opacity: 1;
@@ -910,7 +921,8 @@ section.status-friend{
 .blurred{
   filter: blur(.25rem);
   opacity: .8;
-  transition: $transition
+  transition: $transition;
+  pointer-events: none;
 }
 .new-album{
   border-top: 1px solid #ccc;
@@ -945,5 +957,27 @@ section.status-friend{
     @extend .input;
     margin: 0;
     width: 100%;
+  }
+}
+.container-albums{
+  display: flex;
+  flex-wrap: wrap;
+  article{
+    width:25%;
+    padding:5px;
+    a{
+      background: $button-color;
+      display: block;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: $secundary-color;
+      transition:$transition;
+      &:hover{
+        background:$primary-color;
+        color:$white;
+        transition: $transition;
+      }
+    }
   }
 }

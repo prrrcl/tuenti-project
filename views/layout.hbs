@@ -12,13 +12,23 @@
         <div></div>
         <div></div>
       </div>
+        <h3>Crea un album</h3>
       <div class="albums-modal">
+        {{#unless user.albums}}
+        <p class="no-albums">Todavía no tienes ningún album, ¡crea el primero a continuación!</p>
+        {{else}}
+        <p>O selecciona uno que tengas creado.</p>
+        {{/unless}}
+        <div class="container-albums">
         {{#each user.albums}}
-          {{name}}
+          <article class="album-item">
+            <a href="#">{{name}}</a>
+          </article>
         {{/each}}
+        </div>
       </div>
-      <form action="/upload" class="new-album" method="POST">
-      <input type="text" class="new-album-input" placeholder="Nuevo Album">
+      <form class="new-album" method="POST">
+      <input type="text" class="new-album-input" name="name" placeholder="Nuevo Album">
       <button>Crear Album</button>
       </form>
     </section>
@@ -36,5 +46,6 @@
     {{/if}}
     {{{body}}}
     <script src="/javascripts/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>

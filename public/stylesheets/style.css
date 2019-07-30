@@ -1154,6 +1154,20 @@ section.status-friend .status-date {
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.modals h3 {
+  text-align: center;
+}
+
+.albums-modal {
+  padding-top: 30px;
+}
+
+.albums-modal p {
+  font-size: .8em;
+  text-align: center;
+  color: #8f8f8f;
+}
+
 .modal-opened {
   opacity: 1;
   pointer-events: all;
@@ -1191,6 +1205,7 @@ section.status-friend .status-date {
   opacity: .8;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
 }
 
 .new-album {
@@ -1230,5 +1245,36 @@ section.status-friend .status-date {
 .new-album .new-album-input {
   margin: 0;
   width: 100%;
+}
+
+.container-albums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container-albums article {
+  width: 25%;
+  padding: 5px;
+}
+
+.container-albums article a {
+  background: #42b6fb;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #313131;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.container-albums article a:hover {
+  background: #007ac2;
+  color: white;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 /*# sourceMappingURL=style.css.map */

@@ -61,6 +61,30 @@ const main = () => {
       navBar.classList.remove('blurred');
     });
   }
+  // Crear album
+  const form = document.querySelector('.new-album');
+  const listAlbums = document.querySelector('.albums-modal');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const album = {
+      name: event.srcElement.name.value
+    };
+    const noAlbum = document.querySelector('.no-albums');
+    if (noAlbum) {
+      noAlbum.innerHTML = '';
+    }
+    const response = await axios.post('/api/addAlbum', album);
+    form.reset(); // Reseteamos el form
+    // creamos en el DOM lo que hemos metido en el query
+    const newAlbum = response.data;
+    const article = document.createElement('article');
+    article.classList.add('album-item');
+    article.innerHTML = `
+      <a href="#">
+        ${newAlbum.name}
+      </a>`;
+    listAlbums.appendChild(article);
+  });
 };
 
 window.addEventListener('load', main);
