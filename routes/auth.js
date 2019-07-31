@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Album = require('../models/Album');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { isLoggedIn, isNotLoggedIn, isFormFilled, isSignUpFormFilled } = require('../middlewares/authMiddlewares');
@@ -60,6 +61,10 @@ router.post('/signup', isLoggedIn, isSignUpFormFilled, async (req, res, next) =>
       surnames,
       username,
       password: hashedPassword
+    });
+    await Album.create({
+      idUser: user._id,
+      name: 'My album'
     });
     // añadimos este usuario nuevo a la session
     req.session.currentUser = user;
