@@ -632,6 +632,11 @@ footer nav ul li a {
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.searchImg {
+  height: 50px;
+  width: 50px;
+}
+
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
