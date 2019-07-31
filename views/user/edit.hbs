@@ -10,10 +10,16 @@
     </form>
 
     <form action="/t/profile/edit/profile" method="POST" class="edit-info-form">
-    <label for="name">Nombre:</label>
+      <label for="name">Nombre:</label>
       <input type="text" name="name" id="name" placeholder="Nombre" value="{{currentUser.name}}">
       <label for="surname">Apellidos:</label>
       <input type="text" name="surnames" id="surname" placeholder="Apellidos" value="{{currentUser.surnames}}">
+      <label for="description">Descripción:</label>
+      <input type="text" name="description" id="description" placeholder="Descripción" value="{{currentUser.description}}">
+      <label for="job">Trabajo:</label>
+      <input type="text" name="job" id="job" placeholder="Trabajo" value="{{currentUser.job}}">
+      <label for="studies">Estudios:</label>
+      <input type="text" name="studies" id="studies" placeholder="Estudios" value="{{currentUser.studies}}">
       <button type="submit">Editar información</button>
     </form>
   </main>

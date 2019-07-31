@@ -82,11 +82,14 @@ router.post('/edit/account', isNotLoggedIn, async (req, res, next) => {
 });
 
 router.post('/edit/profile', isNotLoggedIn, async (req, res, next) => {
-  const { name, surnames } = req.body;
+  const { name, surnames, description, job, studies } = req.body;
   const idUser = req.session.currentUser._id;
-  await User.findByIdAndUpdate(idUser, { name, surnames });
+  await User.findByIdAndUpdate(idUser, { name, surnames, description, job, studies });
   req.session.currentUser.name = name;
   req.session.currentUser.surnames = surnames;
+  req.session.currentUser.description = description;
+  req.session.currentUser.job = job;
+  req.session.currentUser.studies = studies;
   res.redirect(`/t/user/${req.session.currentUser.username}`);
 });
 

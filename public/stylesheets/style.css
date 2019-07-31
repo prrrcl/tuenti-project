@@ -1362,6 +1362,11 @@ section.status-friend .status-date {
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.photoAlbum {
+  height: 200px;
+  width: auto;
+}
+
 .content-photo {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
