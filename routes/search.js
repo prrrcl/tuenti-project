@@ -16,20 +16,4 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-/*
-router.get('/', async (req, res, next) => {
-  const { username } = req.query;
-  if ({ username }.includes('a')) {
-    try {
-      const usersArray = await User.find({ username });
-      // console.log(usersArray);
-      res.locals.title = `Búsqueda de "${username}"`;
-      res.render('search', { usersArray });
-    } catch (err) {
-      next(err);
-    }
-  }
-});
-*/
-
 module.exports = router;
