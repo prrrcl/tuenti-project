@@ -1,8 +1,17 @@
 <main>
-    <h1>Esto es lo que hemos encotrado:</h1> 
+    <h1>Resultado de la búsqueda:</h1> 
     <ul>
         {{#each filteredUsers}}
-        <li><a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a></li>
+            <li>
+                <a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a>
+                {{#if isFriend}}
+                <button disabled>Ya sois amigos</button>
+                {{else}}
+                <form class="add-friend">
+                    <button>Añadir Amigo</button>
+                </form>
+                {{/if}}
+            </li>
         {{/each}}
     </ul> 
 </main>

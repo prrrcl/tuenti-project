@@ -42,4 +42,15 @@ router.post('/postComment', async (req, res, next) => {
   }
 });
 
+router.post('/addFriend', async (req, res, next) => {
+  try {
+    const idUsuarioLogeado = req.session.currentUser._id;
+    const idUsuarioAgregado = req.body.idUser;
+    const user = await User.findByIdAndUpdate(idUsuarioLogeado, { $push: { friends: idUsuarioAgregado } });
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

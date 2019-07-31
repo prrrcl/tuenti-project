@@ -116,6 +116,15 @@ const main = () => {
       commentsContainer.appendChild(article);
     });
   }
+
+  // add friend
+
+  const addButtons = document.querySelectorAll('.add-friend');
+  addButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+
+    });
+  });
 };
 
 window.addEventListener('load', main);
