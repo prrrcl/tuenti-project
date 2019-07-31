@@ -45,6 +45,10 @@ const userSchema = new Schema({
   },
   studies: {
     type: String
+  },
+  isFriend: {
+    type: Boolean,
+    default: false
   }
 }, {
   timestamps: true
