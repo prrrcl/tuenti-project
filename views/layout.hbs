@@ -18,19 +18,24 @@
         <p class="no-albums">Todavía no tienes ningún album, ¡crea el primero a continuación!</p>
         {{else}}
         <p>O selecciona uno que tengas creado.</p>
+          <form action="/t/profile/upload" method="POST" class="upload-pics" enctype="multipart/form-data">
+            <div class="container-albums">
+            {{#each user.albums}}
+              <input name="album" id="{{name}}" type="radio" value="{{_id}}">
+              <label for="{{name}}">{{name}}</label>
+            {{/each}}
+            </div>
+            <input type="file" multiple name="photo">
+            <button>Cargar fotos</button>
+          </form>
         {{/unless}}
-        <div class="container-albums">
-        {{#each user.albums}}
-          <article class="album-item">
-            <a href="#">{{name}}</a>
-          </article>
-        {{/each}}
-        </div>
-      </div>
+        <div>
       <form class="new-album" method="POST">
       <input type="text" class="new-album-input" name="name" placeholder="Nuevo Album">
       <button>Crear Album</button>
       </form>
+        </div>
+      </div>
     </section>
     <nav class="nav-bar">
       {{>menuDesk}}

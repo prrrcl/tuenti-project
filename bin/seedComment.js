@@ -17,7 +17,6 @@ const data = [{
 async function addComment (data) {
   for (let i = 0; i < data.length; i++) {
     data[i] = await CommentPhotos.create({ idPhoto: data[i].idPhoto, idUser: data[i].idUser, Comment: data[i].Comment });
-    console.log(data[i] + ' introduced');
   }
 
   mongoose.connection.close();

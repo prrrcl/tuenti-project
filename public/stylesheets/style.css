@@ -47,7 +47,7 @@ footer nav ul li a {
   font-size: .8em;
 }
 
-.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button, .new-album button {
+.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button, .new-album button, .comment-form button {
   padding: 10px 30px;
   font-size: 1em;
   color: white;
@@ -65,7 +65,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover, .new-album button:hover {
+.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover, .new-album button:hover, .comment-form button:hover {
   background: #007ac2;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -73,7 +73,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input, .home-login article form input, .edit-info-form input, .new-album .new-album-input {
+.input, .home-login article form input, .edit-info-form input, .new-album .new-album-input, .comment-form input {
   padding: 9px 13px;
   font-size: 1em;
   margin: 12px;
@@ -84,13 +84,13 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input:hover, .home-login article form input:hover, .edit-info-form input:hover, .new-album .new-album-input:hover {
+.input:hover, .home-login article form input:hover, .edit-info-form input:hover, .new-album .new-album-input:hover, .comment-form input:hover {
   border: #007ac2 1px solid;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.input:focus, .home-login article form input:focus, .edit-info-form input:focus, .new-album .new-album-input:focus {
+.input:focus, .home-login article form input:focus, .edit-info-form input:focus, .new-album .new-album-input:focus, .comment-form input:focus {
   outline: none;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -1218,8 +1218,13 @@ section.status-friend .status-date {
   display: flex;
 }
 
+.new-album div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .new-album input {
-  width: 80%;
   padding: 10px;
   border: 1px solid #ccc;
 }
@@ -1276,5 +1281,162 @@ section.status-friend .status-date {
   color: white;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.content-photo {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.photo-title {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.grid-album {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid-album .main-photo {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid-album .main-photo img {
+  max-height: 500px;
+}
+
+.grid-album .albums-photos {
+  width: 15%;
+  margin-right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.grid-album .albums-photos .thumb {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 150px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 5px 0;
+}
+
+.comment-form {
+  padding: 25px 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+}
+
+.comment-form input {
+  width: 100%;
+  margin: 0;
+  padding: 15px 25px;
+}
+
+.comment-form button {
+  width: 20%;
+  padding: 10px;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
+}
+
+.comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments .user-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  justify-content: flex-end;
+}
+
+.comments .user-comment .comment {
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.comments .user-comment .comment span {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 8px;
+  color: #949494;
+}
+
+.comments .user-comment a {
+  max-width: 50px;
+  margin-right: 10px;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+.comments .user-comment a img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */

@@ -17,7 +17,6 @@ const data = [{
 async function addAlbum (data) {
   for (let i = 0; i < data.length; i++) {
     data[i] = await Album.create({ idUser: data[i].idUser, name: data[i].name, photos: data[i].photos });
-    console.log(data[i] + ' introduced');
   }
 
   mongoose.connection.close();

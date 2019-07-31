@@ -45,9 +45,6 @@ router.post('/edit/security', isNotLoggedIn, async (req, res, next) => {
   const salt = bcrypt.genSaltSync(saltRounds);
   const currentUser = req.session.currentUser.username;
   const user = await User.findOne({ username: currentUser });
-
-  console.log(typeof oldpassword);
-  console.log(typeof user.password);
   if (password === repassword) {
     if (bcrypt.compareSync(oldpassword, user.password)) {
       try {
@@ -93,12 +90,22 @@ router.post('/edit/profile', isNotLoggedIn, async (req, res, next) => {
   res.redirect(`/t/user/${req.session.currentUser.username}`);
 });
 
-router.post('/changepic', isNotLoggedIn, parser.single('profileImg'), async (req, res, next) => {
+router.post('/changepic', isNotLoggedIn, parser.single('profileImg'), async (req, res, next) => { // parser.array('photo', 8)
   const imageUrl = req.file.secure_url;
   const idUser = req.session.currentUser._id;
   await User.findByIdAndUpdate(idUser, { profileImg: imageUrl });
   req.session.currentUser.profileImg = imageUrl;
   res.redirect('/t/profile/edit');
+});
+router.post('/upload', isNotLoggedIn, parser.array('photo', 8), async (req, res, next) => {
+  const files = req.files;
+  const album = req.body.album;
+  console.log(album);
+  files.forEach(async (element) => {
+    const newPhoto = await Photo.create({ photo: element.secure_url, idAlbum: album });
+    await Album.findByIdAndUpdate(album, { $push: { photos: newPhoto._id } });
+  });
+  res.redirect(`/t/user/${req.session.currentUser.username}`);
 });
 
 module.exports = router;

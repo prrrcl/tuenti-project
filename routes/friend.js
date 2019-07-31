@@ -73,16 +73,19 @@ router.get('/:username/albums/:idAlbum', async (req, res, next) => {
 
 router.get('/:username/albums/:idAlbum/photo/:idPhoto', async (req, res, next) => {
   try {
-    const user = await User.findOne({ username: req.params.username });
+    const user = await User.findOne({ username: req.params.username }).populate('albums');
     const album = await Album.findOne({ _id: req.params.idAlbum });
     const photo = await Photo.findOne({ _id: req.params.idPhoto }).populate('comments');
+    console.log(user.albums);
+    photo.comments.forEach((c) => {
+      c.date = moment(c.createdAt).startOf('minutes').fromNow();
+    });
     const data = {
       user,
       album,
       photo
     };
     res.locals.title = `${photo.name}`;
-    console.log(data);
     res.render('user/foto', data);
   } catch (error) {
     next(error);

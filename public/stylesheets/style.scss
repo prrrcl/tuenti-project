@@ -928,11 +928,12 @@ section.status-friend{
   border-top: 1px solid #ccc;
   margin-top: 25px;
   padding-top: 25px;
-  
     margin: 15px 0;
     display:flex;
+    div{
+      display: flex;
+    }
     input{
-      width:80%;
       padding: 10px;
       border: 1px solid #ccc;
       &:focus{
@@ -977,6 +978,121 @@ section.status-friend{
         background:$primary-color;
         color:$white;
         transition: $transition;
+      }
+    }
+  }
+}
+.content-photo{
+  flex-direction: column;
+}
+.photo-title{
+  text-align: center;
+  margin: 50px 0;
+}
+.grid-album{
+  display: flex;
+  .main-photo{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    img{
+      max-height: 500px;
+    }
+  }
+  .albums-photos{
+    width: 15%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    .thumb{
+      width: 100%;
+      align-items: center;
+      display: flex;
+      min-height: 150px;
+      background: rgba(0, 0, 0, .2);
+      padding:15px;
+      margin: 5px 0;
+    }
+  }
+}
+.comment-form{
+  padding: 25px 150px;
+  display: flex;
+  margin-top: 25px;
+  input{
+    @extend .input;
+    width: 100%;
+    margin:0;
+    padding: 15px 25px;
+  }
+  button{
+    width: 20%;
+      padding:10px;
+      @extend .btn;
+      border-radius: 0;
+      -webkit-border-top-right-radius: 5px;
+      -webkit-border-bottom-right-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      -moz-border-radius-bottomright: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin: 0;
+  }
+}
+.comments{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .user-comment{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    justify-content: flex-end;
+    .comment{
+      width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(255, 255,255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    span{
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      font-size: 8px;
+      color: #949494;
+    }
+    }
+    a{
+      max-width: 50px;
+      margin-right: 10px;
+      height: 50px;
+      width:100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px;
+      img{
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%)
       }
     }
   }

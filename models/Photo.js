@@ -10,8 +10,7 @@ const photoSchema = new Schema({
     ref: 'Album'
   },
   name: {
-    type: String,
-    required: true
+    type: String
   },
   photo: {
     type: String

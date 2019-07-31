@@ -36,7 +36,6 @@ router.post('/postComment', async (req, res, next) => {
       createdComment
     };
     await Photo.findByIdAndUpdate(idPhoto, { $push: { comments: createdComment._id } });
-    console.log(data);
     res.json(data);
   } catch (err) {
     next(err);
