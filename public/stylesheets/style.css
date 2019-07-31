@@ -47,7 +47,7 @@ footer nav ul li a {
   font-size: .8em;
 }
 
-.btn, .home-login article form button, .edit-info-form button, aside.invite-your-friends form button, .new-album button, .comment-form button {
+.btn, .home-login article form button, .edit-info-form button, .upload-pics button, aside.invite-your-friends form button, .new-album button, .comment-form button {
   padding: 10px 30px;
   font-size: 1em;
   color: white;
@@ -65,7 +65,7 @@ footer nav ul li a {
   -o-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, aside.invite-your-friends form button:hover, .new-album button:hover, .comment-form button:hover {
+.btn:hover, .home-login article form button:hover, .edit-info-form button:hover, .upload-pics button:hover, aside.invite-your-friends form button:hover, .new-album button:hover, .comment-form button:hover {
   background: #007ac2;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -835,6 +835,21 @@ footer nav ul li a {
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.upload-pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.upload-pics input {
+  padding: 50px;
+  border: 1px solid #ccc;
+}
+
 aside.main-aside {
   margin: 0;
 }
@@ -1157,6 +1172,13 @@ section.status-friend .status-date {
   padding: 25px;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .modals {
+    display: block;
+  }
 }
 
 .modals h3 {
@@ -1214,9 +1236,6 @@ section.status-friend .status-date {
 }
 
 .new-album {
-  border-top: 1px solid #ccc;
-  margin-top: 25px;
-  padding-top: 25px;
   margin: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1261,8 +1280,63 @@ section.status-friend .status-date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container-albums .toggle-albums {
+  margin: 1.5rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.container-albums .toggle-albums input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.container-albums .toggle-albums input:checked + label {
+  background-color: #4B9DEA;
+  color: #FFF;
+  border-color: #007ac2;
+  z-index: 1;
+}
+
+.container-albums .toggle-albums label {
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  border: solid 1px #DDD;
+  background-color: #FFF;
+  font-size: 1rem;
+  line-height: 140%;
+  font-weight: 600;
+  text-align: center;
+  -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, -webkit-box-shadow .15s ease-out;
+  transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, -webkit-box-shadow .15s ease-out;
+  transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+  transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out, -webkit-box-shadow .15s ease-out;
 }
 
 .container-albums article {

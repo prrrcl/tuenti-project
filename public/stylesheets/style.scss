@@ -642,6 +642,17 @@ footer{
     transition: $transition;
   }
 }
+.upload-pics{
+  display: flex;
+  flex-direction: column;
+  input{
+    padding: 50px;
+    border: 1px solid #ccc;
+  }
+  button{
+    @extend .btn;
+  }
+}
 aside.main-aside{
   margin: 0;
   @include media('medium'){
@@ -889,6 +900,10 @@ section.status-friend{
   background: $white;
   padding: 25px;
   transition: $transition;
+  display: none;
+  @include media('medium'){
+    display: block;
+  }
   h3{
     text-align: center;
   }
@@ -931,9 +946,6 @@ section.status-friend{
   pointer-events: none;
 }
 .new-album{
-  border-top: 1px solid #ccc;
-  margin-top: 25px;
-  padding-top: 25px;
     margin: 15px 0;
     display:flex;
     div{
@@ -968,7 +980,43 @@ section.status-friend{
 }
 .container-albums{
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  .toggle-albums{
+    margin: 1.5rem 0;
+    box-sizing: border-box;
+    font-size: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    input{
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -9999px;
+    }
+    input:checked + label{
+      background-color: #4B9DEA;
+      color: #FFF;
+      border-color: $primary-color;
+      z-index: 1;
+    }
+    label{
+      cursor: pointer;
+      margin: 0;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      position: relative;
+      display: inline-block;
+      border: solid 1px #DDD;
+      background-color: #FFF;
+      font-size: 1rem;
+      line-height: 140%;
+      font-weight: 600;
+      text-align: center;
+      transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+    }
+  }
   article{
     width:25%;
     padding:5px;

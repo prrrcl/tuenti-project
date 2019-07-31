@@ -13,6 +13,10 @@
         <div></div>
       </div>
         <h3>Crea un album</h3>
+      <form class="new-album" method="POST">
+      <input type="text" class="new-album-input" name="name" placeholder="Nuevo Album">
+      <button>Crear Album</button>
+      </form>
       <div class="albums-modal">
         {{#unless user.albums}}
         <p class="no-albums">Todavía no tienes ningún album, ¡crea el primero a continuación!</p>
@@ -20,20 +24,18 @@
         <p>O selecciona uno que tengas creado.</p>
           <form action="/t/profile/upload" method="POST" class="upload-pics" enctype="multipart/form-data">
             <div class="container-albums">
+              <div class="toggle-albums">
             {{#each user.albums}}
               <input name="album" id="{{name}}" type="radio" value="{{_id}}">
               <label for="{{name}}">{{name}}</label>
             {{/each}}
+              </div>
             </div>
             <input type="file" multiple name="photo">
             <button>Cargar fotos</button>
           </form>
         {{/unless}}
         <div>
-      <form class="new-album" method="POST">
-      <input type="text" class="new-album-input" name="name" placeholder="Nuevo Album">
-      <button>Crear Album</button>
-      </form>
         </div>
       </div>
     </section>

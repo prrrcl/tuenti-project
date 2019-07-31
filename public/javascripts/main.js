@@ -63,7 +63,7 @@ const main = () => {
   }
   // Crear album
   const form = document.querySelector('.new-album');
-  const listAlbums = document.querySelector('.container-albums');
+  const listAlbums = document.querySelector('.toggle-albums');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const album = {
@@ -81,6 +81,7 @@ const main = () => {
     input.setAttribute('type', 'radio');
     input.setAttribute('name', 'album');
     input.setAttribute('value', newAlbum._id);
+    input.setAttribute('id', newAlbum.name);
     const label = document.createElement('label');
     label.setAttribute('for', newAlbum.name);
     label.innerHTML = newAlbum.name;
