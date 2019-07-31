@@ -1,7 +1,7 @@
 <main>
     <h1>Esto es lo que hemos encotrado:</h1> 
     <ul>
-        {{#each usersArray}}
+        {{#each filteredUsers}}
         <li><a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a></li>
         {{/each}}
     </ul> 
