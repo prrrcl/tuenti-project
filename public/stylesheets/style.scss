@@ -1140,18 +1140,19 @@ section.status-friend{
     flex-direction: row;
   }
   .main-photo{
-    width: 100%;
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
     @include media('medium'){
-      width: 85%;
+      width: 100%;
     }
     img{
-      max-height: 500px;
+      max-height: auto;
+      width: 100%;
       @include media('medium'){
-        max-height: auto;
-        width: 100%;
+        max-height: 500px;
+        width:auto;
       }
     }
   }
