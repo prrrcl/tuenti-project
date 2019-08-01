@@ -3,7 +3,20 @@
   <header class="profile-img">
     <img src="{{url}}" alt="">
   </header>
-  <section>
+  <section class="info-mobile">
+    <p class="toggler-info">Ver información de <span>{{currentUser.name}}</span></p>
+    <div class="info-container">
+        <h3>Descripción:</h3>
+        <p>{{friend.description}}</p>
+        <h3>Trabajo:</h3>
+        <p>{{friend.job}}</p>
+        <h3>Estudios:</h3>
+        <p>{{friend.studies}}</p>
+        <h3>Cumpleaños:</h3>
+        <p>{{birthday}}</p>
+    </div>
+  </section>
+  <section class="info">
     <h3>Descripción:</h3>
     <p>{{friend.description}}</p>
     <h3>Trabajo:</h3>
