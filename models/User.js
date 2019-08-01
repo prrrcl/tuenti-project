@@ -52,6 +52,10 @@ const userSchema = new Schema({
   },
   birthday: {
     type: Date
+  },
+  visits: {
+    type: Number,
+    default: 0
   }
 }, {
   timestamps: true
