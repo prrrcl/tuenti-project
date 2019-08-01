@@ -1811,7 +1811,7 @@ section.status-friend .status-date {
 }
 
 .info-mobile .visible {
-  height: 200px;
+  height: 240px;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -1860,5 +1860,13 @@ section.status-friend .status-date {
 
 .edit-container .edit-info-form {
   max-width: 90%;
+}
+
+.info, .info-container {
+  margin-left: 10px;
+}
+
+.info p, .info-container p {
+  margin: 0 5px 20px;
 }
 /*# sourceMappingURL=style.css.map */

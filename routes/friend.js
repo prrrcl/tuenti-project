@@ -158,8 +158,10 @@ router.get('/:username/albums/:idAlbum/photo/:idPhoto', async (req, res, next) =
 });
 router.get('/:username/friends', async (req, res, next) => {
   try {
-    const user = User.find({ username: req.params.username });
+    const user = await User.find({ username: req.params.username });
     const friends = user.friends;
+    console.log(friends);
+    res.locals.title = `Friends`;
     res.render('friend/friends', friends);
   } catch (error) {
     next(error);

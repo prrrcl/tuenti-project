@@ -41,7 +41,7 @@
     </a>
   {{/each}}
   </div>
-  <h3>Amigos <span class="count">({{friend.friends.length}})</span></h3>
+  <h3>Amigos <span class="count"><a href="/t/user/{{friend.username}}/friends">({{friend.friends.length}})</a> </span></h3>
   <div class="friends-container">
     {{#each last6Friends}}
     <a href="/t/user/{{username}}">

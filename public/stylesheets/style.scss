@@ -1354,7 +1354,7 @@ section.status-friend{
     transition: $transition;
   }
   .visible{
-    height: 200px;
+    height: 240px;
     transition: $transition;
   }
   @include media('medium'){
@@ -1389,5 +1389,11 @@ section.status-friend{
   }
   .edit-info-form{
     max-width: 90%;
+  }
+}
+.info, .info-container{
+  margin-left: 10px;
+  p{
+    margin: 0 5px 20px;
   }
 }

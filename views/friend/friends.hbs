@@ -1,8 +1,16 @@
-<main>
+
+<main class="searchResult">
     <h1>Estos son tus amigos:</h1> 
     <ul>
-            <li>
-                <a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a>
+        {{#each friends}}
+            <li class="result">
+
+                <a href="/t/user/{{username}}"><img src="{{headPhoto}}" alt="Profile picture" class="searchImg"></a>
+                <div>
+                    <a href="/t/user/{{username}}"><h3>{{name}} {{surnames}}</h3></a>
+                </div>
             </li>
+            
+        {{/each}}
     </ul> 
 </main>
