@@ -47,8 +47,8 @@ app.use(flash());
 app.use(async (req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
   if (req.session.currentUser) {
-    const user = await User.findById(req.session.currentUser._id).populate('albums');
-    app.locals.user = user;
+    const userGlobal = await User.findById(req.session.currentUser._id).populate('albums');
+    app.locals.userGlobal = userGlobal;
   }
   next();
 });

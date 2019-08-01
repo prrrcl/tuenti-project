@@ -16,9 +16,9 @@ const main = () => {
           myAccount.classList.remove('opened');
         });
       }
-      if (!myAccount.classList.contains('opened')) {
-        document.removeEventListener('click');
-      }
+      // if (!myAccount.classList.contains('opened')) {
+      //   document.removeEventListener('click');
+      // }
     });
   }
   // menu-mobile
@@ -64,30 +64,32 @@ const main = () => {
   // Crear album
   const form = document.querySelector('.new-album');
   const listAlbums = document.querySelector('.toggle-albums');
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const album = {
-      name: event.srcElement.name.value
-    };
-    const noAlbum = document.querySelector('.no-albums');
-    if (noAlbum) {
-      noAlbum.innerHTML = '';
-    }
-    const response = await axios.post('/api/addAlbum', album);
-    form.reset(); // Reseteamos el form
-    // creamos en el DOM lo que hemos metido en el query
-    const newAlbum = response.data;
-    const input = document.createElement('input');
-    input.setAttribute('type', 'radio');
-    input.setAttribute('name', 'album');
-    input.setAttribute('value', newAlbum._id);
-    input.setAttribute('id', newAlbum.name);
-    const label = document.createElement('label');
-    label.setAttribute('for', newAlbum.name);
-    label.innerHTML = newAlbum.name;
-    listAlbums.appendChild(input);
-    listAlbums.appendChild(label);
-  });
+  if (form) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const album = {
+        name: event.srcElement.name.value
+      };
+      const noAlbum = document.querySelector('.no-albums');
+      if (noAlbum) {
+        noAlbum.innerHTML = '';
+      }
+      const response = await axios.post('/api/addAlbum', album);
+      form.reset(); // Reseteamos el form
+      // creamos en el DOM lo que hemos metido en el query
+      const newAlbum = response.data;
+      const input = document.createElement('input');
+      input.setAttribute('type', 'radio');
+      input.setAttribute('name', 'album');
+      input.setAttribute('value', newAlbum._id);
+      input.setAttribute('id', newAlbum.name);
+      const label = document.createElement('label');
+      label.setAttribute('for', newAlbum.name);
+      label.innerHTML = newAlbum.name;
+      listAlbums.appendChild(input);
+      listAlbums.appendChild(label);
+    });
+  }
 
   // post comment
   const commentsContainer = document.querySelector('.comments');
@@ -121,8 +123,14 @@ const main = () => {
 
   const addButtons = document.querySelectorAll('.add-friend');
   addButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-
+    button.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const user = {
+        idUser: event.srcElement.id
+      };
+      await axios.post('/api/addFriend', user);
+      const btntoDelete = document.querySelector('.add-friend');
+      btntoDelete.innerHTML = `<button disabled>Ya sois amigos</button>`;
     });
   });
 };

@@ -18,14 +18,14 @@
       <button>Crear Album</button>
       </form>
       <div class="albums-modal">
-        {{#unless user.albums}}
+        {{#unless userGlobal.albums}}
         <p class="no-albums">Todavía no tienes ningún album, ¡crea el primero a continuación!</p>
         {{else}}
         <p>O selecciona uno que tengas creado.</p>
           <form action="/t/profile/upload" method="POST" class="upload-pics" enctype="multipart/form-data">
             <div class="container-albums">
               <div class="toggle-albums">
-            {{#each user.albums}}
+            {{#each userGlobal.albums}}
               <input name="album" id="{{name}}" type="radio" value="{{_id}}">
               <label for="{{name}}">{{name}}</label>
             {{/each}}

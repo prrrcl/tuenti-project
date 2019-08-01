@@ -23,7 +23,7 @@ const userSchema = new Schema({
   },
   profileImg: {
     type: String,
-    default: '/images/default.jpg'
+    default: 'https://res.cloudinary.com/dsjopbxpn/image/upload/v1564640461/tuentiyo/default_bfhlva.jpg'
   },
   albums: [{
     type: ObjectId,
@@ -49,6 +49,9 @@ const userSchema = new Schema({
   isFriend: {
     type: Boolean,
     default: false
+  },
+  birthday: {
+    type: Date
   }
 }, {
   timestamps: true

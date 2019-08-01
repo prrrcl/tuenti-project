@@ -839,6 +839,27 @@ aside.invite-your-friends{
   padding: 20px;
   display: flex;
   flex-direction: column;
+  h3{
+    margin:20px 0;
+  }
+  .friends-container{
+    display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      a{
+        width: 33.33%;
+        padding: 5px;
+        img{
+          width: 100%;
+        }
+      }
+  }
   .albums-container{
     display: flex;
     flex-direction: row;
@@ -1055,12 +1076,13 @@ section.status-friend{
     width: 85%;
     display: flex;
     justify-content: center;
+    align-items: center;
     img{
       max-height: 500px;
     }
   }
   .albums-photos{
-    width: 15%;
+    width: 12%;
     margin-right: 50px;
     display: flex;
     flex-direction: column;
@@ -1069,9 +1091,16 @@ section.status-friend{
       align-items: center;
       display: flex;
       min-height: 150px;
-      background: rgba(0, 0, 0, .2);
-      padding:15px;
+      padding:8px;
       margin: 5px 0;
+      transition: $transition;
+      &:hover{
+        transform: scale(1.1);
+        transition: $transition
+      }
+      img{
+        width: 100%;
+      }
     }
   }
 }
@@ -1155,5 +1184,22 @@ section.status-friend{
         transform: translate(-50%,-50%)
       }
     }
+  }
+}
+.count{
+  font-size:.7rem;
+  color: $grisperonotanto;
+  margin-left: 8px;
+  text-transform: uppercase;
+  a{
+    color:$grisperonotanto;
+    text-decoration: none;
+  }
+}
+.albums-view{
+  flex-direction: column;
+  padding: 50px;
+  h1{
+    margin: 0 0 25px;
   }
 }

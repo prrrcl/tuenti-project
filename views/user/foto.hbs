@@ -5,15 +5,11 @@
     <img src="{{photo.photo}}" alt="{{photo.name}}">
   </div>
   <div class="albums-photos">
-    <div class="thumb">
-      esto es un thumb de la siguiente foto en la paginación
-    </div>
-    <div class="thumb">
-      esto es un thumb de la siguiente foto en la paginación
-    </div>
-    <div class="thumb">
-      esto es un thumb de la siguiente foto en la paginación
-    </div>
+    {{#each nextThreePhotos}}
+      <div class="thumb">
+        <a href="/t/user/{{../user.username}}/albums/{{idAlbum}}/photo/{{_id}}"><img src="{{nextPhotosCropped}}" alt="{{name}}"></a>
+      </div>
+    {{/each}}
   </div>
 </div>
 
@@ -29,7 +25,7 @@
  {{#each photo.comments}}
  <article class="user-comment">
    <div class="comment">{{comment}} <span>{{date}}</span></div>
-   <a href="/t/user/{{../user.username}}"><img src="{{../user.profileImg}}" alt=""></a>
+   <a href="/t/user/{{idUser.username}}"><img src="{{photoCropped}}" alt=""></a>
  </article>
  {{/each}}
 </section>
