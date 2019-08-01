@@ -40,7 +40,6 @@ router.get('/', async (req, res, next) => {
         const url = src.split("'")[1];
         usuario.headPhoto = url;
       });
-
       res.locals.title = `Búsqueda de "${username}"`;
       res.render('search', { filteredUsers });
     });
