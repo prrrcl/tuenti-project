@@ -27,9 +27,9 @@ router.get('/', async (req, res, next) => {
       });
       filteredUsers.forEach((usuario) => {
         const lastState = usuario.status[usuario.status.length - 1].status;
-
-        usuario.lastState = lastState;
-
+        if (!lastState) {
+          usuario.lastState = lastState;
+        }
         if (userLogged.friends.includes(usuario._id)) {
           usuario.isFriend = true;
         }
@@ -40,7 +40,6 @@ router.get('/', async (req, res, next) => {
         const url = src.split("'")[1];
         usuario.headPhoto = url;
       });
-
       res.locals.title = `Búsqueda de "${username}"`;
       res.render('search', { filteredUsers });
     });

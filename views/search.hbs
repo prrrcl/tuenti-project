@@ -11,7 +11,7 @@
                 <div>
                     <a href="/t/user/{{username}}"><h3>{{name}} {{surnames}}</h3></a>
                     {{#if lastState}}
-                        <p>{lastState}}</p>
+                        <p>{{lastState}}</p>
                     {{/if}}
                     {{#if isFriend}}
                     <button disabled>Ya sois amigos</button>
@@ -22,6 +22,7 @@
                     {{/if}}
                 </div>
             </li>
+            
         {{/each}}
     </ul> 
 </main>
