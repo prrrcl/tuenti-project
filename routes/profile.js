@@ -7,7 +7,7 @@ const Status = require('../models/Status');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
-const parser = require('../config/cloud');
+const { parser } = require('../config/cloud');
 
 /* GET home page. */
 router.get('/', isNotLoggedIn, async (req, res, next) => {

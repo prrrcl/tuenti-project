@@ -1,4 +1,8 @@
+<main class="content albums-view">
 <h1>{{album.name}}</h1>
+<div>
 {{#each album.photos}}
   <a href="/t/user/{{../user.username}}/albums/{{../album._id}}/photo/{{_id}}"><img src="{{photo}}" alt="img" class="photoAlbum"></a>
 {{/each}}
+</div>
+</main>

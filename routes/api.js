@@ -47,7 +47,12 @@ router.post('/addFriend', async (req, res, next) => {
     const idUsuarioLogeado = req.session.currentUser._id;
     const idUsuarioAgregado = req.body.idUser;
     const user = await User.findByIdAndUpdate(idUsuarioLogeado, { $push: { friends: idUsuarioAgregado } });
-    res.json(user);
+    const friend = await User.findByIdAndUpdate(idUsuarioAgregado, { $push: { friends: idUsuarioLogeado } });
+    const data = {
+      user,
+      friend
+    };
+    res.json(data);
   } catch (err) {
     next(err);
   }

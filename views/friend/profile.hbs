@@ -1,7 +1,7 @@
 <main class="content main-content">
 <aside class="main-aside profile-user"> 
   <header class="profile-img">
-    <img src="{{friend.profileImg}}" alt="{{friend.username}} profile pic">
+    <img src="{{url}}" alt="">
   </header>
   <h3>Descripción:</h3>
   <p>{{user.description}}</p>
@@ -16,13 +16,21 @@
   <h2>Novedades</h2>
 </section>
 <aside class="main-aside albums-profile">
-  <h3>Álbumes</h3>
+  <h3>Álbumes <span class="count"><a href="/t/user/{{friend.username}}/albums">({{friend.albums.length}})</a></span></h3>
   <div class="albums-container">
-  {{#each friend.albums}}
+  {{#each last4Albums}}
     <a href="/t/user/{{../friend.username}}/albums/{{this._id}}">
-      <img src="{{photos.[0].photo}}" alt="{{this.photos.[0].name}}">
+      <img src="{{this.photos.[0].photo}}" alt="{{this.photos.[0].name}}">
     </a>
   {{/each}}
+  </div>
+  <h3>Amigos <span class="count">({{friend.friends.length}})</span></h3>
+  <div class="friends-container">
+    {{#each last6Friends}}
+    <a href="/t/user/{{username}}">
+      <img src="{{profileImg}}" alt="{{name}}">
+    </a>
+    {{/each}}
   </div>
 </aside>
 </main>

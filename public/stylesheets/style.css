@@ -1175,6 +1175,31 @@ aside.invite-your-friends form button {
           flex-direction: column;
 }
 
+.albums-profile h3 {
+  margin: 20px 0;
+}
+
+.albums-profile .friends-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.albums-profile .friends-container a {
+  width: 33.33%;
+  padding: 5px;
+}
+
+.albums-profile .friends-container a img {
+  width: 100%;
+}
+
 .albums-profile .albums-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1469,6 +1494,9 @@ section.status-friend .status-date {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .grid-album .main-photo img {
@@ -1476,7 +1504,7 @@ section.status-friend .status-date {
 }
 
 .grid-album .albums-photos {
-  width: 15%;
+  width: 12%;
   margin-right: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1496,9 +1524,21 @@ section.status-friend .status-date {
   display: -ms-flexbox;
   display: flex;
   min-height: 150px;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 15px;
+  padding: 8px;
   margin: 5px 0;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.grid-album .albums-photos .thumb:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.grid-album .albums-photos .thumb img {
+  width: 100%;
 }
 
 .comment-form {
@@ -1598,5 +1638,29 @@ section.status-friend .status-date {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.count {
+  font-size: .7rem;
+  color: #8f8f8f;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.count a {
+  color: #8f8f8f;
+  text-decoration: none;
+}
+
+.albums-view {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px;
+}
+
+.albums-view h1 {
+  margin: 0 0 25px;
 }
 /*# sourceMappingURL=style.css.map */
