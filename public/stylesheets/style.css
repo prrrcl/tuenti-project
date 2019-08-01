@@ -1758,11 +1758,8 @@ section.status-friend .status-date {
 
 .searchResult ul .result a {
   max-width: 100px;
-<<<<<<< HEAD
   width: 100%;
-=======
   color: #313131;
->>>>>>> dev
 }
 
 .searchResult ul .result a img {
@@ -1777,15 +1774,15 @@ section.status-friend .status-date {
 }
 
 .searchResult ul .result div a {
-  text-decoration: none;
-}
-
-.searchResult ul .result div a h3 {
   color: #313131;
   text-decoration: none;
 }
 
 .searchResult ul .result div a {
+  text-decoration: none;
+}
+
+.searchResult ul .result div a h3 {
   color: #313131;
   text-decoration: none;
 }
