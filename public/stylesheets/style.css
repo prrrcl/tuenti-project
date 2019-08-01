@@ -1834,4 +1834,18 @@ section.status-friend .status-date {
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
+
+.edit-container {
+  padding: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .edit-container {
+    padding: 0;
+  }
+}
+
+.edit-container .edit-info-form {
+  max-width: 90%;
+}
 /*# sourceMappingURL=style.css.map */

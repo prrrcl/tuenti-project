@@ -1371,3 +1371,12 @@ section.status-friend{
     transition: $transition
   }
 }
+.edit-container{
+  padding:15px;
+  @include media('medium'){
+    padding: 0;
+  }
+  .edit-info-form{
+    max-width: 90%;
+  }
+}
