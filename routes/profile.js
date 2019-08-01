@@ -7,7 +7,7 @@ const Status = require('../models/Status');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const { isNotLoggedIn } = require('../middlewares/authMiddlewares');
-const { parser } = require('../config/cloud');
+const { parser, cloudinary } = require('../config/cloud');
 
 /* GET home page. */
 router.get('/', isNotLoggedIn, async (req, res, next) => {
@@ -25,9 +25,19 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
   }
 });
 
-router.get('/edit', isNotLoggedIn, (req, res, next) => {
+router.get('/edit', isNotLoggedIn, async (req, res, next) => {
+  const user = await User.findOne({ username: req.session.currentUser.username });
+  const img = user.profileImg;
+  const image = cloudinary.image(img, { transformation: 'oneWithoutGrav', type: 'fetch' });
+  const splittedImage = image.split(' ');
+  const src = splittedImage[1];
+  const url = src.split("'")[1];
+  const data = {
+    url,
+    user
+  };
   res.locals.title = 'Perfil';
-  res.render('user/edit');
+  res.render('user/edit', data);
 });
 
 router.get('/edit/account', isNotLoggedIn, (req, res, next) => {

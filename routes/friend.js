@@ -30,7 +30,23 @@ router.get('/:username', async (req, res, next) => {
     const src = splittedImage[1];
     const url = src.split("'")[1];
     const last4Albums = friend.albums.map(e => e).splice(-4, 4);
+    last4Albums.forEach((album) => {
+      const photo = album.photos[0].photo;
+      const image = cloudinary.image(photo, { transformation: 'oneWithoutGrav', type: 'fetch' });
+      const splittedImage = image.split(' ');
+      const src = splittedImage[1];
+      const url = src.split("'")[1];
+      album.photos[0].headPhoto = url;
+    });
     const last6Friends = friend.friends.map(e => e).splice(-6, 6);
+    last6Friends.forEach((friend) => {
+      const photo = friend.profileImg;
+      const image = cloudinary.image(photo, { transformation: 'oneWithoutGrav', type: 'fetch' });
+      const splittedImage = image.split(' ');
+      const src = splittedImage[1];
+      const url = src.split("'")[1];
+      friend.headPhoto = url;
+    });
     const lastIndexOfStatus = friend.status.length;
     const birthday = moment(friend.birthday).format('LL');
     let data = {};
@@ -53,7 +69,6 @@ router.get('/:username', async (req, res, next) => {
         birthday
       };
     }
-    console.log(friend);
     res.locals.title = `${friend.name}`;
     res.render('friend/profile', data);
   } catch (error) {

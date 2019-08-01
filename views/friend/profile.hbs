@@ -24,7 +24,7 @@
   <div class="albums-container">
   {{#each last4Albums}}
     <a href="/t/user/{{../friend.username}}/albums/{{this._id}}">
-      <img src="{{this.photos.[0].photo}}" alt="{{this.photos.[0].name}}">
+      <img src="{{this.photos.[0].headPhoto}}" alt="{{this.photos.[0].name}}">
     </a>
   {{/each}}
   </div>
@@ -32,7 +32,7 @@
   <div class="friends-container">
     {{#each last6Friends}}
     <a href="/t/user/{{username}}">
-      <img src="{{profileImg}}" alt="{{name}}">
+      <img src="{{headPhoto}}" alt="{{name}}">
     </a>
     {{/each}}
   </div>
