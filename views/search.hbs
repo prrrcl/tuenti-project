@@ -1,8 +1,8 @@
-<main>
+<main class="searchResult">
     <h1>Resultado de la búsqueda:</h1> 
-    <ul>
+    <ul class="user-search">
         {{#each filteredUsers}}
-            <li>
+            <li class="result">
                 <a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a>
                 {{#if isFriend}}
                 <button disabled>Ya sois amigos</button>

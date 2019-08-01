@@ -483,9 +483,68 @@ footer{
   }
 }
 //Search css will be here
-.searchImg {
-  height: 50px;
-  width: 50px;
+.add-friend {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchResult{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .user-search{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    justify-content: flex-end;
+    .result{
+      width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(255, 255,255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    span{
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      font-size: 8px;
+      color: #949494;
+    }
+    }
+    a{
+      max-width: 50px;
+      margin-right: 10px;
+      height: 50px;
+      width:100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px;
+      img{
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%)
+      }
+    }
+  }
 }
 // -----------------------
 .content{

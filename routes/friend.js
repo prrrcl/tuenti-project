@@ -91,5 +91,13 @@ router.get('/:username/albums/:idAlbum/photo/:idPhoto', async (req, res, next) =
     next(error);
   };
 });
-
+router.get('/:username/friends', async (req, res, next) => {
+  try {
+    const user = User.find({ username: req.params.username });
+    const friends = user.friends;
+    res.render('friend/friends', friends);
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
