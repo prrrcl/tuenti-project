@@ -1003,6 +1003,13 @@ aside.main-aside img {
   width: 100%;
   outline: none;
   border: 1px solid #ccc;
+  font-size: .9rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-content .write-status form input {
+    font-size: .8rem;
+  }
 }
 
 .main-content .write-status form input:focus {

@@ -22,8 +22,13 @@
     </ul>
   </section>
 </aside>
-<section>
-  {{>estado}}
+<section> 
+  <section class="write-status">
+  <form action="/t/profile/updateStatus" method="POST">
+    <input type="text" name="status" placeholder="¿En qué piensas?">
+  </form>
+  <p> <span>Estado actual:</span>  {{lastStatus.status}}</p>
+</section>
   <h2>Novedades</h2>
 </section>
 <aside class="main-aside invite-your-friends">

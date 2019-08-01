@@ -774,6 +774,10 @@ aside.main-aside{
         width: 100%;
         outline: none;
         border: 1px solid #ccc;
+        font-size: .9rem;
+        @include media('medium'){
+          font-size: .8rem;
+        }
         &:focus{
           outline: none;
           border: 1px solid $primary-color;
