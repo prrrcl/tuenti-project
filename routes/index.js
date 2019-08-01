@@ -17,6 +17,7 @@ router.get('/', isNotLoggedIn, async (req, res, next) => {
     const lastIndexOfStatus = user.status.length;
     const lastStatus = user.status[lastIndexOfStatus - 1];
     const data = {
+      user,
       url,
       lastStatus
     };

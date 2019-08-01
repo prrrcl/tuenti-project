@@ -20,6 +20,10 @@ router.get('/:username', async (req, res, next) => {
         path: 'photos'
       }
     });
+    if (req.session.currentUser._id !== friend._id) {
+      const visits = friend.visits + 1;
+      await User.findByIdAndUpdate(friend._id, { $set: { visits } });
+    }
     const imgProfile = friend.profileImg;
     const image = cloudinary.image(imgProfile, { transformation: 'oneWithoutGrav', type: 'fetch' });
     const splittedImage = image.split(' ');
@@ -28,6 +32,7 @@ router.get('/:username', async (req, res, next) => {
     const last4Albums = friend.albums.map(e => e).splice(-4, 4);
     const last6Friends = friend.friends.map(e => e).splice(-6, 6);
     const lastIndexOfStatus = friend.status.length;
+    const birthday = moment(friend.birthday).format('LL');
     let data = {};
     if (lastIndexOfStatus !== 0) {
       const lastStatus = friend.status[lastIndexOfStatus - 1];
@@ -38,12 +43,14 @@ router.get('/:username', async (req, res, next) => {
         dateStatus,
         last4Albums,
         last6Friends,
-        url
+        url,
+        birthday
       };
     } else {
       data = {
         friend,
-        url
+        url,
+        birthday
       };
     }
     console.log(friend);
