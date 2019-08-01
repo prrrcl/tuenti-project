@@ -1491,10 +1491,23 @@ section.status-friend .status-date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-album {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .grid-album .main-photo {
-  width: 85%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1506,20 +1519,36 @@ section.status-friend .status-date {
           align-items: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .grid-album .main-photo {
+    width: 85%;
+  }
+}
+
 .grid-album .main-photo img {
   max-height: 500px;
 }
 
 .grid-album .albums-photos {
-  width: 12%;
+  width: 100%;
   margin-right: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-album .albums-photos {
+    width: 12%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .grid-album .albums-photos .thumb {
@@ -1549,11 +1578,17 @@ section.status-friend .status-date {
 }
 
 .comment-form {
-  padding: 25px 150px;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-form {
+    padding: 25px 150px;
+  }
 }
 
 .comment-form input {
@@ -1564,6 +1599,7 @@ section.status-friend .status-date {
 
 .comment-form button {
   width: 20%;
+  font-size: 7px;
   padding: 10px;
   border-radius: 0;
   -webkit-border-top-right-radius: 5px;
@@ -1573,6 +1609,12 @@ section.status-friend .status-date {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-form button {
+    font-size: .8rem;
+  }
 }
 
 .comments {
@@ -1669,5 +1711,44 @@ section.status-friend .status-date {
 
 .albums-view h1 {
   margin: 0 0 25px;
+}
+
+.searchResult h1 {
+  margin: 70px 0;
+}
+
+.searchResult ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.searchResult ul .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 150px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.searchResult ul .result a {
+  max-width: 100px;
+}
+
+.searchResult ul .result a img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.searchResult ul .result div {
+  margin-left: 15px;
 }
 /*# sourceMappingURL=style.css.map */

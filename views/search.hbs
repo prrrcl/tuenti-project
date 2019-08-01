@@ -6,14 +6,19 @@
         {{/unless}}
         {{#each filteredUsers}}
             <li class="result">
-                <a href="/t/user/{{username}}"><img src="{{profileImg}}" alt="Profile picture" class="searchImg">{{name}} {{surnames}}</a>
-                {{#if isFriend}}
-                <button disabled>Ya sois amigos</button>
-                {{else}}
-                <form class="add-friend">
-                    <button id="{{_id}}">Añadir Amigo</button>
-                </form>
-                {{/if}}
+
+                <a href="/t/user/{{username}}"><img src="{{headPhoto}}" alt="Profile picture" class="searchImg"></a>
+                <div>
+                    <a href="/t/user/{{username}}"><h3>{{name}} {{surnames}}</h3></a>
+                    <p>{{lastState}}</p>
+                    {{#if isFriend}}
+                    <button disabled>Ya sois amigos</button>
+                    {{else}}
+                    <form class="add-friend">
+                        <button id="{{_id}}">Añadir Amigo</button>
+                    </form>
+                    {{/if}}
+                </div>
             </li>
         {{/each}}
     </ul> 

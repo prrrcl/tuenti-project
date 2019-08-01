@@ -1135,20 +1135,31 @@ section.status-friend{
 }
 .grid-album{
   display: flex;
+  flex-direction: column;
+  @include media('medium'){
+    flex-direction: row;
+  }
   .main-photo{
-    width: 85%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include media('medium'){
+      width: 85%;
+    }
     img{
       max-height: 500px;
     }
   }
   .albums-photos{
-    width: 12%;
+    width: 100%;
     margin-right: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    @include media('medium'){
+      width: 12%;
+      flex-direction: column
+    }
     .thumb{
       width: 100%;
       align-items: center;
@@ -1168,9 +1179,12 @@ section.status-friend{
   }
 }
 .comment-form{
-  padding: 25px 150px;
+  padding: 10px;
   display: flex;
   margin-top: 25px;
+  @include media('medium'){
+    padding: 25px 150px;
+  }
   input{
     @extend .input;
     width: 100%;
@@ -1179,6 +1193,10 @@ section.status-friend{
   }
   button{
     width: 20%;
+    font-size:7px;
+    @include media('medium'){
+      font-size:.8rem;
+    }
       padding:10px;
       @extend .btn;
       border-radius: 0;
@@ -1264,5 +1282,33 @@ section.status-friend{
   padding: 50px;
   h1{
     margin: 0 0 25px;
+  }
+}
+.searchResult{
+  h1{
+    margin: 70px 0;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    .result{
+      display: flex;
+      max-height: 150px;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(0,0,0, .1);
+      a{
+        max-width: 100px;
+        img{
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+      div{
+        margin-left: 15px;
+      }
+    }
   }
 }
