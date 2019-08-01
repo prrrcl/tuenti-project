@@ -298,7 +298,7 @@ footer nav ul li a {
 }
 
 .visible {
-  height: 250px;
+  height: 300px;
   pointer-events: all;
   -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
   transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
@@ -1529,6 +1529,13 @@ section.status-friend .status-date {
   max-height: 500px;
 }
 
+@media only screen and (min-width: 768px) {
+  .grid-album .main-photo img {
+    max-height: auto;
+    width: 100%;
+  }
+}
+
 .grid-album .albums-photos {
   width: 100%;
   margin-right: 50px;
@@ -1715,6 +1722,8 @@ section.status-friend .status-date {
 
 .searchResult h1 {
   margin: 70px 0;
+  padding: 10px;
+  text-align: center;
 }
 
 .searchResult ul {
@@ -1725,7 +1734,15 @@ section.status-friend .status-date {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 100%;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .searchResult ul {
+    width: 50%;
+    padding: 0;
+  }
 }
 
 .searchResult ul .result {
@@ -1741,7 +1758,11 @@ section.status-friend .status-date {
 
 .searchResult ul .result a {
   max-width: 100px;
+<<<<<<< HEAD
   width: 100%;
+=======
+  color: #313131;
+>>>>>>> dev
 }
 
 .searchResult ul .result a img {
@@ -1762,5 +1783,70 @@ section.status-friend .status-date {
 .searchResult ul .result div a h3 {
   color: #313131;
   text-decoration: none;
+}
+
+.searchResult ul .result div a {
+  color: #313131;
+  text-decoration: none;
+}
+
+.info {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .info {
+    display: block;
+  }
+}
+
+.info-mobile {
+  display: block;
+}
+
+.info-mobile .info-container {
+  height: 0;
+  padding-top: 15px;
+  overflow: hidden;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.info-mobile .visible {
+  height: 200px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media only screen and (min-width: 768px) {
+  .info-mobile {
+    display: none;
+  }
+}
+
+.toggler-info {
+  text-align: center;
+  color: #8f8f8f;
+  cursor: pointer;
+}
+
+.toggler-info span {
+  font-weight: 800;
+}
+
+.toggler-info:after {
+  content: '▾';
+  margin: 0 5px;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  position: absolute;
+}
+
+.toggler-inverse:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  position: absolute;
+  -webkit-transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 /*# sourceMappingURL=style.css.map */

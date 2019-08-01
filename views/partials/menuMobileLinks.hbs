@@ -10,7 +10,10 @@
     <a href="/t/home">Inicio</a>
   </li>
   <li>
-    <a href="/t/profile">Perfil</a>
+    <a href="/t/user/{{currentUser.username}}">Perfil</a>
+  </li>
+  <li>
+    <a href="/t/profile/edit">Editar perfil</a>
   </li>
   <li>
     <form action="/logout" method="POST">

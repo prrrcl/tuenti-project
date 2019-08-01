@@ -133,6 +133,17 @@ const main = () => {
       btntoDelete.innerHTML = `<button disabled>Ya sois amigos</button>`;
     });
   });
+
+  // view info mobile
+  const togglerInfo = document.querySelector('.toggler-info');
+  const containerInfo = document.querySelector('.info-container');
+
+  if (containerInfo) {
+    togglerInfo.addEventListener('click', (e) => {
+      containerInfo.classList.toggle('visible');
+      togglerInfo.classList.toggle('toggler-inverse');
+    });
+  }
 };
 
 window.addEventListener('load', main);
