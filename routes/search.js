@@ -27,9 +27,9 @@ router.get('/', async (req, res, next) => {
       });
       filteredUsers.forEach((usuario) => {
         const lastState = usuario.status[usuario.status.length - 1].status;
-        if (!lastState) {
-          usuario.lastState = lastState;
-        }
+
+        usuario.lastState = lastState;
+
         if (userLogged.friends.includes(usuario._id)) {
           usuario.isFriend = true;
         }

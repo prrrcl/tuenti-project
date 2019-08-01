@@ -1741,6 +1741,7 @@ section.status-friend .status-date {
 
 .searchResult ul .result a {
   max-width: 100px;
+  width: 100%;
 }
 
 .searchResult ul .result a img {
@@ -1750,5 +1751,16 @@ section.status-friend .status-date {
 
 .searchResult ul .result div {
   margin-left: 15px;
+  width: 100%;
+  position: relative;
+}
+
+.searchResult ul .result div a {
+  text-decoration: none;
+}
+
+.searchResult ul .result div a h3 {
+  color: #313131;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

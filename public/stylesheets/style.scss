@@ -1301,6 +1301,7 @@ section.status-friend{
       border: 1px solid rgba(0,0,0, .1);
       a{
         max-width: 100px;
+        width: 100%;
         img{
           width: 100%;
           border-radius: 5px;
@@ -1308,6 +1309,15 @@ section.status-friend{
       }
       div{
         margin-left: 15px;
+        width: 100%;
+        position: relative;
+        a{
+          text-decoration: none;
+          h3{
+            color:$secundary-color;
+            text-decoration: none;
+          }
+        }
       }
     }
   }

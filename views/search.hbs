@@ -10,7 +10,9 @@
                 <a href="/t/user/{{username}}"><img src="{{headPhoto}}" alt="Profile picture" class="searchImg"></a>
                 <div>
                     <a href="/t/user/{{username}}"><h3>{{name}} {{surnames}}</h3></a>
-                    <p>{{lastState}}</p>
+                    {{#if lastState}}
+                        <p>{lastState}}</p>
+                    {{/if}}
                     {{#if isFriend}}
                     <button disabled>Ya sois amigos</button>
                     {{else}}
