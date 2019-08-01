@@ -1507,7 +1507,7 @@ section.status-friend .status-date {
 }
 
 .grid-album .main-photo {
-  width: 100%;
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1521,18 +1521,19 @@ section.status-friend .status-date {
 
 @media only screen and (min-width: 768px) {
   .grid-album .main-photo {
-    width: 85%;
+    width: 100%;
   }
 }
 
 .grid-album .main-photo img {
-  max-height: 500px;
+  max-height: auto;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
   .grid-album .main-photo img {
-    max-height: auto;
-    width: 100%;
+    max-height: 500px;
+    width: auto;
   }
 }
 
