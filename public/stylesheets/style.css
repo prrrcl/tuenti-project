@@ -1507,7 +1507,7 @@ section.status-friend .status-date {
 }
 
 .grid-album .main-photo {
-  width: 85%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1521,7 +1521,7 @@ section.status-friend .status-date {
 
 @media only screen and (min-width: 768px) {
   .grid-album .main-photo {
-    width: 100%;
+    width: 85%;
   }
 }
 
@@ -1868,5 +1868,60 @@ section.status-friend .status-date {
 
 .info p, .info-container p {
   margin: 0 5px 20px;
+}
+
+.home-feed {
+  width: 100%;
+  padding: 20px;
+  list-style: none;
+}
+
+.home-feed li {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-feed li .date {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: .7em;
+  color: #8f8f8f;
+}
+
+.home-feed li a img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.home-feed li div {
+  width: 100%;
+  padding-left: 25px;
+}
+
+.home-feed li div p {
+  font-size: .7rem;
+  color: #8f8f8f;
+  margin-bottom: 10px;
+}
+
+.home-feed li div a {
+  color: #313131;
+  text-decoration: none;
+}
+
+.home-feed li div img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.home-feed li div div {
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

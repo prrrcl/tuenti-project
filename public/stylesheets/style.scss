@@ -1140,12 +1140,12 @@ section.status-friend{
     flex-direction: row;
   }
   .main-photo{
-    width: 85%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     @include media('medium'){
-      width: 100%;
+      width: 85%;
     }
     img{
       max-height: auto;
@@ -1395,5 +1395,53 @@ section.status-friend{
   margin-left: 10px;
   p{
     margin: 0 5px 20px;
+  }
+}
+.home-feed{
+  width:100%;
+  padding:20px;
+  list-style: none;
+  li{
+    .date{
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      font-size:.7em;
+      color:$grisperonotanto;
+    }
+    width: 100%;
+    position:relative;
+    padding: 20px;
+    background: rgba($color: #ffffff, $alpha: .2);
+    border:1px solid rgba($color: #000000, $alpha: .1);
+    display: flex;
+    a{
+      img{
+        width: 100px;
+        border-radius: 5px;
+      }
+    }
+    div{
+      p{
+        font-size:.7rem;
+        color: $grisperonotanto;
+        margin-bottom:10px;
+      }
+      a{
+        color: $secundary-color;
+        text-decoration: none;
+        h3{
+        }
+      }
+      width:100%;
+      padding-left:25px;
+      img{
+        width: 50px;
+        margin-right: 10px;
+      }
+      div{
+        padding:0;
+      }
+    }
   }
 }
