@@ -42,9 +42,11 @@ router.get('/:username', async (req, res, next) => {
       };
     } else {
       data = {
-        friend
+        friend,
+        url
       };
     }
+    console.log(friend);
     res.locals.title = `${friend.name}`;
     res.render('friend/profile', data);
   } catch (error) {
